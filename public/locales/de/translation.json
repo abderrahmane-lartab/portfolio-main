@@ -1,139 +1,245 @@
 {
-    "Home": "Start",
-    "About": "Über mich",
-    "Skills": "Fähigkeiten",
-    "Projects": "Projekte",
-    "Education & Experience": "Ausbildung und Erfahrung",
-    "Contact Me": "Kontakt",
-    "Full Stack Developer": "Full-Stack-Entwickler",
-    "bio": "Hallo, ich bin Abderrahmane Lartab, ein leidenschaftlicher Full-Stack-Webentwickler aus Casablanca, Marokko. Ich entwickle moderne und skalierbare Webanwendungen, die Ideen in digitale Erlebnisse verwandeln.",
-    "Contact": "Kontakt",
-    "View CV": "Lebenslauf öffnen",
-    "Scroll Down": "Nach unten scrollen",
-    "About Me": "Über mich",
-    "Web Developer": "Webentwickler",
-    "IT Support Specialist": "IT-Support-Spezialist",
-    "about_paragraph_1": "Als Junior Full-Stack-Webentwickler und IT-Techniker aus Casablanca, Marokko, spezialisiere ich mich auf den Bau moderner, skalierbarer Anwendungen mit React und Laravel. Ich genieße es, komplette digitale Lösungen zu entwickeln — von intuitiven Front-End-Oberflächen bis hin zu sicheren und effizienten Back-End-APIs. Mein Hintergrund in Computerwartung und Systemunterstützung stärkt mein Verständnis dafür, wie Software und Hardware zusammenarbeiten, um zuverlässige Ergebnisse zu liefern.",
-    "about_paragraph_2": "Angetrieben von Neugier und kontinuierlichem Wachstum, erkunde ich ständig neue Technologien und Best Practices, um in einer sich schnell entwickelnden Technologielandschaft vorne zu bleiben. Meine Arbeit spiegelt eine starke Balance zwischen sauberem Code, Benutzererfahrung und Leistung wider, und ich strebe danach, Anwendungen zu bauen, die nicht nur funktional und elegant sind, sondern auch bedeutungsvoll und wirkungsvoll — egal ob ich alleine oder innerhalb eines Teams arbeite.",
-    "Skills & Technologies": "Fähigkeiten & Technologien",
-    "Frontend": "Frontend",
-    "Backend": "Backend",
-    "Databases": "Datenbanken",
-    "Technologies": "Technologien",
-    "Each project is a unique piece of development": "Jedes Projekt ist ein einzigartiges Entwicklungswerk",
-    "Open Project": "Projekt Öffnen",
-    "mihna_description": "Eine Full-Stack-Jobplattform, die Kandidaten und Unternehmen über moderne Stellenanzeigen, Bewerbungsmanagement, Echtzeit-Benachrichtigungen und KI-gestützte Unterstützung verbindet.",
-    "okad_description": "Eine responsive und SEO-optimierte Schulplattform, die die Werte, Aktivitäten und Veranstaltungen der Institution durch ein sauberes und dynamisches Erlebnis hervorhebt.",
-    "youchef_description": "Eine kollaborative Rezeptplattform, auf der Nutzer kulinarische Ideen teilen, entdecken und speichern können – mit einer ansprechenden und responsiven Oberfläche.",
-    "foody_description": "Eine stilvolle Restaurant-Website, die Speisekarte und Marke mit einer modernen, flüssigen und benutzerfreundlichen Erfahrung präsentiert.",
-    "parksmart_description": "Ein intelligentes Parkverwaltungssystem, das Fahrern hilft, verfügbare Plätze in Echtzeit zu finden und den Betreibern eine bessere Kontrolle über den Alltag bietet.",
-    "pipeline_description": "Eine CRM-ähnliche Pipeline-Management-Plattform, die Verkaufsabläufe vereinfacht, Leads verfolgt und das Kundenbeziehungsmanagement verbessert.",
-    "technews_description": "Eine moderne Technologie-Nachrichtenplattform mit Echtzeit-Updates, klaren Kategorien und einem gepflegten Leseerlebnis auf allen Geräten.",
-    "somadix_description": "SOMADIX ist ein Unternehmen, das auf verschiedene Geschäfts- und Bauleistungen spezialisiert ist und von einem Fachmann aus dem Feld mit langjähriger Markterfahrung gegründet wurde. Es übernimmt die Planung und Ausführung von Einzel- oder getrennten Projekten mit Präzision, Effizienz und einem starken Fokus auf Kundenzufriedenheit.",
-    "technews_title": "TechNews - Technologie-Nachrichtenplattform",
-    "Technologies Used": "Verwendete Technologien",
-    "Key Features": "Hauptfunktionen",
-    "Real-time news updates from multiple sources": "Echtzeit-Nachrichten-Updates von mehreren Quellen",
-    "Categorized technology articles": "Kategorisierte Technologie-Artikel",
-    "Responsive design for all devices": "Responsives Design für alle Geräte",
-    "Search and filter functionality": "Such- und Filterfunktionalität",
-    "Bookmark and save articles": "Artikel markieren und speichern",
-    "Education": "Bildung",
-    "Experience": "Erfahrung",
-    "education": {
-      "items": [
-        {
-          "title": "Full Stack Web Development Programm",
-          "institution": "OFPPT ISAG AL Fida",
-          "location": "Casablanca, Marokko",
-          "period": "In Bearbeitung"
-        },
-        {
-          "title": "High School Diploma (Physical Sciences)",
-          "institution": "Lycée Homan El Fatwaki",
-          "location": "Casablanca, Marokko",
-          "period": "2024"
-        }
-      ]
-    },
-    "experience": {
-      "items": [
-        {
-          "title": "Teilnahme am 2024 Hackathon",
-          "institution": "OFPPT - ISGI",
-          "period": "05/2024 - 05/2024",
-          "description": "Erstellung einer Parkplattform während des Hackathons.\\nBelohnung: 6. Preis"
-        }
-      ]
-    },
-    "Certificates": "Zertifikate",
-    "Open": "Öffnen",
-    "certificates": {
-      "items": [
-        {
-          "name": "Git & Github Bootcamp",
-          "photo": "Certif1.png",
-          "platform": "Udemy",
-          "owner": "Udemy",
-          "technologies": ["Git", "Github"],
-          "date": "2025"
-        },
-        {
-          "name": "React Kurs",
-          "photo": "Certif2.png",
-          "platform": "Meta",
-          "owner": "Meta",
-          "technologies": ["React", "JavaScript"],
-          "date": "2025"
-        },
-        {
-          "name": "Einführung in Docker",
-          "photo": "Certif3.png",
-          "platform": "KodeCloud",
-          "owner": "KodeCloud",
-          "technologies": ["Docker", "Container"],
-          "date": "2025"
-        }
-      ]
-    },
-    "Resume": "Lebenslauf",
-    "Available for work": "Verfügbar für Arbeit",
-    "Let's build something": "Lass uns etwas",
-    "incredible together!": "Unglaubliches zusammen aufbauen!",
-    "2025 Mohamed Maimoune. All rights reserved": "2025 Abderrahmane Lartab. Alle Rechte vorbehalten",
-    "Let's start a project together": "Lass uns ein Projekt zusammen starten",
-    "Name": "Name",
-    "Email": "E-Mail",
-    "Message": "Nachricht",
-    "Text Message...": "Nachricht schreiben...",
-    "Send Message": "Nachricht senden",
-    "Copyright 2025 · Made by": "Copyright 2025 · Erstellt von",
-    "Coming Soon": "Demnächst verfügbar",
-    "Something new is coming — stay tuned.": "Etwas Neues kommt — bleiben Sie dran.",
-    "Job Platform Connecting Candidates & Employers": "Job-Plattform, die Kandidaten und Arbeitgeber verbindet",
-    "mihna_description_1": "Vor Mihna standen Jobsuchende und Arbeitgeber häufig vor fragmentierten Rekrutierungsprozessen – Kandidaten hatten Schwierigkeiten, passende Stellen zu finden, während Recruiter Probleme hatten, Bewerbungen effektiv zu verwalten und nachzuverfolgen. Kommunikationslücken und das Fehlen intelligenter Tools machten die Einstellung langsam und ineffizient.",
-    "mihna_description_2": "Mihna ist eine Full-Stack-Webplattform, die diese Lücke schließt, indem sie Kandidaten und Arbeitgeber über ein intelligentes, optimiertes System verbindet. Sie bietet automatisiertes Bewerbungs­tracking, Echtzeit-Benachrichtigungen und einen integrierten Chatbot-Assistenten — und hilft beiden Seiten, Zeit zu sparen, organisiert zu bleiben und smartere Karriereentscheidungen zu treffen.",
-    "The Challenge": "Die Herausforderung",
-    "mihna_challenge": "Wie können wir ein nahtloses Matching-Erlebnis schaffen und gleichzeitig die Plattform einfach und effizient für Kandidaten wie Unternehmen halten? Unser Ziel war nicht nur, bestehende Jobportale zu reproduzieren, sondern darüber hinauszugehen : intelligente Empfehlungen, vereinfachte Bewerbungen und Echtzeit-Interaktion zwischen Talenten und Arbeitgebern anzubieten.",
-    "Platform Features & Functionalities": "Plattformfunktionen & Funktionalitäten",
-    "Candidate Features & Functionalities": "Funktionen & Funktionalitäten für Kandidaten",
-    "Applying For a Job": "Für einen Job bewerben",
-    "Company Features & Functionalities": "Funktionen & Funktionalitäten für Unternehmen",
-    "View On LinkedIn": "Auf LinkedIn anzeigen",
-    "Explore More Work": "Weitere Arbeiten entdecken",
-    "Authentication Page": "Authentifizierungsseite",
-    "Company dashboard": "Unternehmensdashboard",
-    "Company Profile Page": "Unternehmensprofil-Seite",
-    "Analysis Page": "Analyse­seite",
-    "Job Applications Page Groups by Job": "Bewerbungsseite gruppiert nach Stellenangebot",
-    "Adding a job offer": "Hinzufügen eines Stellenangebots",
-    "Confirmation of data for adding a job offer": "Bestätigung der Daten für das Hinzufügen eines Stellenangebots",
-    "Form to edit the job": "Formular zur Bearbeitung des Stellenangebots",
-    "Home Page": "Startseite",
-    "Profile Page": "Profilseite",
-    "Job Offers Page": "Seite mit Stellenangeboten",
-    "Mihna Chatbot": "Mihna-Chatbot",
-    "Job Offer Details Page": "Seite mit Stellenangebots-Details",
-    "Statistics and testimonials sections": "Abschnitte Statistiken und Testimonials",
-    "Top Companies and Popular Jobs sections": "Abschnitte Top-Unternehmen und beliebte Jobs"    
+  "Home": "Start",
+  "About": "Über mich",
+  "Skills": "Fähigkeiten",
+  "Projects": "Projekte",
+  "Education & Experience": "Ausbildung und Erfahrung",
+  "Contact Me": "Kontakt",
+  "Full Stack Developer": "Full-Stack- & KI-Entwickler",
+  "AI & Full Stack Developer": "Full-Stack- & KI-Entwickler",
+  "Full Stack & AI Developer": "Full-Stack- & KI-Entwickler",
+  "AI • Machine Learning • Full Stack": "KI • Machine Learning • Full Stack",
+  "hero_roles": [
+    "Full-Stack- & KI-Entwickler",
+    "Machine Learning & Computer Vision",
+    "Data Engineering & Cloud"
+  ],
+  "bio": "Hallo, ich bin Abderrahmane Lartab, ein Full-Stack- & KI-Entwickler aus Casablanca, Marokko. Derzeit im AI Developer Programm bei YouCode entwickle ich intelligente Software mit React, Next.js, TypeScript, Laravel, FastAPI sowie Machine Learning und Azure Cloud.",
+  "Contact": "Kontakt",
+  "Scroll Down": "Nach unten scrollen",
+  "About Me": "Über mich",
+  "AI & ML Developer": "KI & ML Entwickler",
+  "Web Developer": "Full-Stack-Entwickler",
+  "IT Support Specialist": "Data & Cloud",
+  "about_paragraph_1": "Ich bin Abderrahmane Lartab, ein Full-Stack- & KI-Entwickler aus Casablanca, Marokko. Derzeit absolviere ich das AI Developer Programm bei YouCode (2026–2027) nach meiner Ausbildung in Full-Stack-Webentwicklung am OFPPT – ISAG Lalla Aicha (2024–2026) und einem Praktikum bei BRT Solutions an einer Schulverwaltungs-SaaS-Plattform. Ich entwickle moderne Webanwendungen mit React.js, Next.js, TypeScript, Laravel, Node.js und FastAPI.",
+  "about_paragraph_2": "Im Bereich KI und Daten arbeite ich mit Python, Scikit-learn, TensorFlow, Keras, PyTorch und YOLOv8 für Machine Learning, Deep Learning und Computer Vision — sowie mit Azure Data Factory, ADLS Gen2, Azure ML, PySpark, Apache Airflow, MLflow und Docker. Mein langfristiges Ziel ist es, intelligente Softwareprodukte zu entwickeln, die moderne Webtechnologien, KI-Modelle, LLMs und Cloud-Infrastruktur vereinen.",
+  "about_pillar_ai_title": "KI & Machine Learning",
+  "about_pillar_ai_desc": "Python, Scikit-learn, TensorFlow, Keras, PyTorch, YOLOv8, Computer Vision & LLMs.",
+  "about_pillar_fs_title": "Full-Stack-Entwicklung",
+  "about_pillar_fs_desc": "React.js, Next.js, TypeScript, PHP, Laravel, Node.js, FastAPI & REST-APIs.",
+  "about_pillar_data_title": "Data Engineering & Cloud",
+  "about_pillar_data_desc": "Azure Data Factory, ADLS Gen2, Azure ML, PySpark, Apache Airflow, MLflow & Docker.",
+  "about_highlight_youcode": "AI Developer Programm · 2026–2027",
+  "about_highlight_ofppt": "Full Stack Web Dev · 2024–2026",
+  "about_highlight_brt": "Full Stack SaaS Praktikum · 2026",
+  "Skills & Technologies": "Fähigkeiten & Technologien",
+  "AI & ML": "KI & ML",
+  "Machine Learning": "Machine Learning",
+  "Deep Learning": "Deep Learning",
+  "LLMs & Prompting": "LLMs & Prompting",
+  "AI Integrations": "KI-Integrationen",
+  "Frontend": "Frontend",
+  "Backend": "Backend",
+  "Databases": "Datenbanken",
+  "Technologies": "Technologien",
+  "Data & Cloud": "Data & Cloud",
+  "Tools & Linux": "Tools & Linux",
+  "Recent projects": "Aktuelle Projekte",
+  "Tech stack": "Tech-Stack",
+  "Availability": "Verfügbarkeit",
+  "Contact info": "Kontakt",
+  "Ask AI anything about Abderrahmane...": "Frage die KI alles über Abderrahmane...",
+  "Abderrahmane AI Assistant": "Abderrahmane KI-Assistent",
+  "View conversation": "Unterhaltung öffnen",
+  "Clear conversation": "Chat löschen",
+  "Minimize chat": "Chat minimieren",
+  "Send message": "Senden",
+  "ai_prompt_projects": "Erzähl mir von Abderrahmanes aktuellen Projekten.",
+  "ai_prompt_stack": "Was ist Abderrahmanes KI- und Full-Stack-Tech-Stack?",
+  "ai_prompt_availability": "Ist Abderrahmane für Arbeit oder Praktika verfügbar und was sind seine Ziele?",
+  "ai_prompt_contact": "Wie kann ich Abderrahmane Lartab kontaktieren?",
+  "Voice Introduction": "Sprachvorstellung",
+  "Play voice introduction": "Sprachvorstellung abspielen",
+  "Pause voice introduction": "Sprachvorstellung pausieren",
+  "Replay": "Erneut abspielen",
+  "Toggle transcript": "Transkript anzeigen",
+  "Each project is a unique piece of development": "Jedes Projekt ist ein einzigartiges Entwicklungswerk",
+  "Open Project": "Projekt Öffnen",
+  "mihna_description": "Eine Full-Stack-Jobplattform, die Kandidaten und Unternehmen über moderne Stellenanzeigen, Bewerbungsmanagement, Echtzeit-Benachrichtigungen und KI-gestützte Unterstützung verbindet.",
+  "okad_description": "Eine responsive und SEO-optimierte Schulplattform, die die Werte, Aktivitäten und Veranstaltungen der Institution durch ein sauberes und dynamisches Erlebnis hervorhebt.",
+  "youchef_description": "Eine kollaborative Rezeptplattform, auf der Nutzer kulinarische Ideen teilen, entdecken und speichern können – mit einer ansprechenden und responsiven Oberfläche.",
+  "foody_description": "Eine stilvolle Restaurant-Website, die Speisekarte und Marke mit einer modernen, flüssigen und benutzerfreundlichen Erfahrung präsentiert.",
+  "parksmart_description": "Ein intelligentes Parkverwaltungssystem, das Fahrern hilft, verfügbare Plätze in Echtzeit zu finden und den Betreibern eine bessere Kontrolle über den Alltag bietet.",
+  "pipeline_description": "Eine CRM-ähnliche Pipeline-Management-Plattform, die Verkaufsabläufe vereinfacht, Leads verfolgt und das Kundenbeziehungsmanagement verbessert.",
+  "technews_description": "Eine moderne Technologie-Nachrichtenplattform mit Echtzeit-Updates, klaren Kategorien und einem gepflegten Leseerlebnis auf allen Geräten.",
+  "somadix_description": "SOMADIX ist ein Unternehmen, das auf verschiedene Geschäfts- und Bauleistungen spezialisiert ist und von einem Fachmann aus dem Feld mit langjähriger Markterfahrung gegründet wurde. Es übernimmt die Planung und Ausführung von Einzel- oder getrennten Projekten mit Präzision, Effizienz und einem starken Fokus auf Kundenzufriedenheit.",
+  "technews_title": "TechNews - Technologie-Nachrichtenplattform",
+  "Technologies Used": "Verwendete Technologien",
+  "Key Features": "Hauptfunktionen",
+  "Real-time news updates from multiple sources": "Echtzeit-Nachrichten-Updates von mehreren Quellen",
+  "Categorized technology articles": "Kategorisierte Technologie-Artikel",
+  "Responsive design for all devices": "Responsives Design für alle Geräte",
+  "Search and filter functionality": "Such- und Filterfunktionalität",
+  "Bookmark and save articles": "Artikel markieren und speichern",
+  "Education": "Bildung",
+  "Experience": "Erfahrung",
+  "education": {
+    "items": [
+      {
+        "title": "AI Developer Programm",
+        "institution": "YouCode",
+        "location": "Marokko",
+        "period": "2026 – 2027 (Aktuell)",
+        "description": "Praxisnahe Ausbildung mit Fokus auf Datenaufbereitung, Machine Learning, Deep Learning, intelligente APIs, externe KI-Dienste und MLOps."
+      },
+      {
+        "title": "Full Stack Webentwicklung",
+        "institution": "OFPPT – ISAG Lalla Aicha",
+        "location": "Casablanca, Marokko",
+        "period": "2024 – 2026",
+        "description": "Ausbildung in Frontend-, Backend-Entwicklung, Datenbanken, APIs und Software Engineering."
+      },
+      {
+        "title": "Abitur (Physikalische Wissenschaften)",
+        "institution": "Lycée Homan El Fatwaki",
+        "location": "Casablanca, Marokko",
+        "period": "2024"
+      }
+    ]
+  },
+  "experience": {
+    "items": [
+      {
+        "title": "Full-Stack-Entwickler Praktikant",
+        "institution": "BRT Solutions",
+        "period": "März 2026 – April 2026",
+        "description": "Mitarbeit an einer Schulverwaltungs-SaaS-Anwendung (Frontend-Entwicklung sowie Funktionen für Schüler, Klassen, Zahlungen, Verwaltung und SMS).\\nZusammenarbeit zur Verbesserung der Benutzererfahrung."
+      },
+      {
+        "title": "Teilnahme am 2024 Hackathon",
+        "institution": "OFPPT - ISGI",
+        "period": "05/2024",
+        "description": "Erstellung einer Parkplattform während des Hackathons.\\nBelohnung: 6. Preis"
+      }
+    ]
+  },
+  "Certificates": "Zertifikate",
+  "Open": "Vorschau",
+  "Verify": "Prüfen",
+  "Additional Certifications": "Weitere Zertifikate",
+  "certificates": {
+    "items": [
+      {
+        "name": "Google AI Essentials",
+        "photo": "Certif4.png",
+        "platform": "Google · Coursera (5 Kurse)",
+        "owner": "Google",
+        "link": "https://coursera.org/verify/specialization/16025RB490YA",
+        "technologies": [
+          "KI",
+          "Prompting"
+        ],
+        "date": "2026"
+      },
+      {
+        "name": "Meta React Basics",
+        "photo": "Certif2.png",
+        "platform": "Meta · Coursera",
+        "owner": "Meta",
+        "link": "https://coursera.org/verify/YQIBW9NGSFFX",
+        "technologies": [
+          "React.js",
+          "JavaScript"
+        ],
+        "date": "2025"
+      },
+      {
+        "name": "Git & GitHub Bootcamp",
+        "photo": "Certif1.png",
+        "platform": "Udemy",
+        "owner": "Udemy",
+        "link": "https://ude.my/UC-96a93d90-5629-464f-8796-ee94fa980db5",
+        "technologies": [
+          "Git",
+          "GitHub"
+        ],
+        "date": "2025"
+      },
+      {
+        "name": "Einführung in Docker",
+        "photo": "Certif3.png",
+        "platform": "KodeKloud",
+        "owner": "KodeKloud",
+        "technologies": [
+          "Docker",
+          "Container"
+        ],
+        "date": "2025"
+      }
+    ],
+    "additional": [
+      {
+        "name": "MySQL Datenbankstrukturen",
+        "issuer": "Meta"
+      },
+      {
+        "name": "Web Development Fundamentals Camp",
+        "issuer": "Boolean"
+      },
+      {
+        "name": "Soft Skills",
+        "issuer": "IBM"
+      }
+    ]
+  },
+  "Full Stack Web": "Full Stack Web",
+  "Deep Learning & CV": "Deep Learning & Vision",
+  "Data Engineering & ML": "Data Engineering & ML",
+  "Other Projects": "Weitere Projekte",
+  "braintumor_description": "Ein Deep-Learning- und Computer-Vision-Projekt zur Klassifizierung und Erkennung von Hirntumoren auf MRT-Bildern (Glioma, Meningioma, No Tumor, Pituitary) mit TensorFlow, Keras, GoogLeNet, YOLOv8, MLflow, FastAPI und Streamlit.",
+  "dataco_description": "Ein End-to-End-Projekt für Azure Data Engineering und Machine Learning zur Verbrauchsprognose mit Azure Data Factory, Azure Data Lake Storage Gen2, Azure Compute und Azure Machine Learning.",
+  "churn_description": "Ein Machine-Learning-Projekt zur Vorhersage der Kundenabwanderung (Churn) mit Python, Pandas, NumPy und Scikit-learn — inklusive EDA, Datenvorverarbeitung, KNN-Klassifikation und Modellevaluierung.",
+  "Available for work": "Verfügbar für Arbeit",
+  "Let's build something": "Lass uns etwas",
+  "incredible together!": "Unglaubliches zusammen aufbauen!",
+  "2025 Abderrahmane Lartab. All rights reserved": "2025 Abderrahmane Lartab. Alle Rechte vorbehalten",
+  "Let's start a project together": "Lass uns ein Projekt zusammen starten",
+  "Name": "Name",
+  "Email": "E-Mail",
+  "Message": "Nachricht",
+  "Text Message...": "Nachricht schreiben...",
+  "Send Message": "Nachricht senden",
+  "Copyright 2025 · Made by": "Copyright 2025 · Erstellt von",
+  "Coming Soon": "Demnächst verfügbar",
+  "Something new is coming — stay tuned.": "Etwas Neues kommt — bleiben Sie dran.",
+  "Job Platform Connecting Candidates & Employers": "Job-Plattform, die Kandidaten und Arbeitgeber verbindet",
+  "mihna_description_1": "Vor Mihna standen Jobsuchende und Arbeitgeber häufig vor fragmentierten Rekrutierungsprozessen – Kandidaten hatten Schwierigkeiten, passende Stellen zu finden, während Recruiter Probleme hatten, Bewerbungen effektiv zu verwalten und nachzuverfolgen. Kommunikationslücken und das Fehlen intelligenter Tools machten die Einstellung langsam und ineffizient.",
+  "mihna_description_2": "Mihna ist eine Full-Stack-Webplattform, die diese Lücke schließt, indem sie Kandidaten und Arbeitgeber über ein intelligentes, optimiertes System verbindet. Sie bietet automatisiertes Bewerbungs­tracking, Echtzeit-Benachrichtigungen und einen integrierten Chatbot-Assistenten — und hilft beiden Seiten, Zeit zu sparen, organisiert zu bleiben und smartere Karriereentscheidungen zu treffen.",
+  "The Challenge": "Die Herausforderung",
+  "mihna_challenge": "Wie können wir ein nahtloses Matching-Erlebnis schaffen und gleichzeitig die Plattform einfach und effizient für Kandidaten wie Unternehmen halten? Unser Ziel war nicht nur, bestehende Jobportale zu reproduzieren, sondern darüber hinauszugehen : intelligente Empfehlungen, vereinfachte Bewerbungen und Echtzeit-Interaktion zwischen Talenten und Arbeitgebern anzubieten.",
+  "Platform Features & Functionalities": "Plattformfunktionen & Funktionalitäten",
+  "Candidate Features & Functionalities": "Funktionen & Funktionalitäten für Kandidaten",
+  "Applying For a Job": "Für einen Job bewerben",
+  "Company Features & Functionalities": "Funktionen & Funktionalitäten für Unternehmen",
+  "View On LinkedIn": "Auf LinkedIn anzeigen",
+  "Explore More Work": "Weitere Arbeiten entdecken",
+  "Authentication Page": "Authentifizierungsseite",
+  "Company dashboard": "Unternehmensdashboard",
+  "Company Profile Page": "Unternehmensprofil-Seite",
+  "Analysis Page": "Analyse­seite",
+  "Job Applications Page Groups by Job": "Bewerbungsseite gruppiert nach Stellenangebot",
+  "Adding a job offer": "Hinzufügen eines Stellenangebots",
+  "Confirmation of data for adding a job offer": "Bestätigung der Daten für das Hinzufügen eines Stellenangebots",
+  "Form to edit the job": "Formular zur Bearbeitung des Stellenangebots",
+  "Home Page": "Startseite",
+  "Profile Page": "Profilseite",
+  "Job Offers Page": "Seite mit Stellenangeboten",
+  "Mihna Chatbot": "Mihna-Chatbot",
+  "Job Offer Details Page": "Seite mit Stellenangebots-Details",
+  "Statistics and testimonials sections": "Abschnitte Statistiken und Testimonials",
+  "Top Companies and Popular Jobs sections": "Abschnitte Top-Unternehmen und beliebte Jobs",
+  "All": "Alle",
+  "Previous": "Zurück",
+  "Next": "Weiter",
+  "digitech_description": "Eine Full-Stack-Elektronik-E-Commerce-Plattform mit Produktkatalog, Benutzerauthentifizierung, Warenkorb und Bestellverwaltung — entwickelt mit React.js und einer Laravel-REST-API."
 }

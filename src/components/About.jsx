@@ -1,5 +1,12 @@
 import React from "react";
-import CodeIcon from "./ui/CodeIcon";
+import {
+  BrainCircuit,
+  Code2,
+  CloudCog,
+  GraduationCap,
+  BriefcaseBusiness,
+  MapPin,
+} from "lucide-react";
 import { useTheme } from "./theme-provider";
 import { useTranslation } from "react-i18next";
 import FadeContent from "./flowBits/FadeContent";
@@ -8,275 +15,256 @@ import AnimatedContent from "./flowBits/AnimatedContent";
 export const About = () => {
   const { t } = useTranslation();
   const { theme } = useTheme();
+  const isLight = theme === "light";
+
+  const pillars = [
+    {
+      icon: BrainCircuit,
+      title: t("about_pillar_ai_title", "AI & Machine Learning"),
+      desc: t(
+        "about_pillar_ai_desc",
+        "Python, Scikit-learn, TensorFlow, PyTorch, YOLOv8, Computer Vision & LLM integrations."
+      ),
+    },
+    {
+      icon: Code2,
+      title: t("about_pillar_fs_title", "Full Stack Development"),
+      desc: t(
+        "about_pillar_fs_desc",
+        "React.js, Next.js, TypeScript, PHP, Laravel, Node.js, FastAPI & REST APIs."
+      ),
+    },
+    {
+      icon: CloudCog,
+      title: t("about_pillar_data_title", "Data Engineering & Cloud"),
+      desc: t(
+        "about_pillar_data_desc",
+        "Azure Data Factory, ADLS Gen2, Azure ML, PySpark, Apache Airflow, MLflow & Docker."
+      ),
+    },
+  ];
+
+  const highlights = [
+    {
+      icon: GraduationCap,
+      label: "YouCode",
+      detail: t("about_highlight_youcode", "AI Developer Program · 2026–2027"),
+    },
+    {
+      icon: GraduationCap,
+      label: "OFPPT – ISAG",
+      detail: t("about_highlight_ofppt", "Full Stack Web Dev · 2024–2026"),
+    },
+    {
+      icon: BriefcaseBusiness,
+      label: "BRT Solutions",
+      detail: t("about_highlight_brt", "Full Stack SaaS Intern · 2026"),
+    },
+  ];
 
   return (
     <section
       id="about"
-      className={`w-[80%] max-sm:w-[90%] max-md:w-[85%] max-[850px]:w-[80%] max-[950px]:w-[90%] m-auto max-[900px]:my-20 py-10 grid grid-cols-[1fr_2fr] max-[850px]:grid-cols-1 gap-5 max-sm:gap-0 rounded-4xl px-10 max-sm:px-5 shadow-[var(--custom-shadow)] ${
-        theme === "light" ? "bg-[#f0f0f3]" : "bg-[#575555]"
-      }`}
+      className="w-[82%] max-xl:w-[88%] max-sm:w-[92%] mx-auto my-12 max-[900px]:my-16"
     >
-      <div className="relative flexy flex-col gap-8">
+      <div
+        className={`relative overflow-hidden rounded-4xl border px-7 sm:px-10 py-9 sm:py-11 shadow-[var(--custom-shadow)] backdrop-blur-md ${
+          isLight
+            ? "bg-white/80 border-slate-200/85"
+            : "bg-[#222226]/90 border-white/10"
+        }`}
+      >
+        {/* Subtle ambient corner wash */}
+        <div
+          aria-hidden="true"
+          className={`pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full blur-3xl ${
+            isLight ? "bg-sky-200/45" : "bg-sky-500/10"
+          }`}
+        />
+
+        {/* Top Header Row */}
         <AnimatedContent
-          distance={10}
-          direction="horizontal"
-          reverse={true}
-          duration={0.8}
-          ease="easeOut"
-          initialOpacity={0}
-          animateOpacity
-          scale={1}
-          threshold={0.2}
-          delay={0.2}
-        >
-          <h1 className="font-bold text-2xl min-[850px]:hidden">
-            {t("About Me")}
-          </h1>
-        </AnimatedContent>
-        <AnimatedContent
-          distance={20}
+          distance={16}
           direction="vertical"
           reverse={false}
-          duration={0.8}
+          duration={0.7}
           ease="easeOut"
           initialOpacity={0}
           animateOpacity
-          scale={1}
-          threshold={0.2}
-          delay={0}
+          threshold={0.15}
         >
-          <div className="relative h-35 w-35 max-sm:h-30 max-sm:w-30 bg-[var(--soft-gray)] p-0 rounded-full shadow-[var(--custom-shadow)]">
-            <img
-              src="/photos/MM_black_text.png"
-              className="h-11 w-11 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-              alt="MM"
-            />
-            <img
-              src="/photos/elements/text.svg"
-              className="img-rotate rounded-full h-35 w-35 max-sm:h-30 max-sm:w-30"
-              alt=""
-            />
+          <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-black/[0.07] dark:border-white/[0.08]">
+            <div className="flex items-center gap-4">
+              {/* Updated Rotating Ring Emblem ("FULL STACK • AI • DATA •") */}
+              <div
+                className={`relative size-16 sm:size-18 shrink-0 rounded-full flex items-center justify-center border shadow-xs ${
+                  isLight
+                    ? "bg-slate-50 border-slate-200/90"
+                    : "bg-white/[0.05] border-white/10"
+                }`}
+              >
+                <img
+                  src={
+                    isLight
+                      ? "/photos/MM_black_text.png"
+                      : "/photos/MM_white_text.png"
+                  }
+                  className="size-6"
+                  alt="AL"
+                />
+                <svg
+                  viewBox="0 0 100 100"
+                  className="absolute inset-0 size-full animate-[rotate_14s_linear_infinite]"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <path
+                      id="about-ring-path"
+                      d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0"
+                    />
+                  </defs>
+                  <text
+                    fill={isLight ? "#334155" : "#cbd5e1"}
+                    fontSize="8.3"
+                    fontWeight="700"
+                    letterSpacing="2.05"
+                  >
+                    <textPath href="#about-ring-path">
+                      FULL STACK • AI &amp; ML • DATA •
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
+
+              <div>
+                <span
+                  className={`text-xs font-bold uppercase tracking-wider ${
+                    isLight ? "text-[#0c5a84]" : "text-sky-400"
+                  }`}
+                >
+                  {t("About Me")}
+                </span>
+                <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-[var(--text-dark)] mt-0.5">
+                  {t("Full Stack & AI Developer", "Full Stack & AI Developer")}
+                </h2>
+              </div>
+            </div>
+
+            <div
+              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-[13px] font-medium border ${
+                isLight
+                  ? "bg-slate-100/90 text-slate-700 border-slate-200/80"
+                  : "bg-white/[0.05] text-slate-300 border-white/10"
+              }`}
+            >
+              <MapPin className="size-3.5 text-[#0c5a84] dark:text-sky-400 shrink-0" />
+              <span>Casablanca, Morocco</span>
+            </div>
           </div>
         </AnimatedContent>
-        <div className="flexy justify-around! flex-col gap-6 max-[850px]:flex-row max-[850px]:hidden!">
-          <AnimatedContent
-            distance={20}
-            direction="vertical"
-            reverse={false}
-            duration={0.8}
-            ease="easeOut"
+
+        {/* Main Asymmetric Grid: Bio on Left + 3 Core Domain Cards on Right */}
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.28fr_1fr] gap-8 lg:gap-10 mt-7 items-start">
+          {/* Left: Updated Personal Narrative + Quick Milestones */}
+          <FadeContent
+            blur={true}
+            duration={900}
+            easing="ease-out"
+            delay={150}
             initialOpacity={0}
-            animateOpacity
-            scale={1}
-            threshold={0.2}
-            delay={0.1}
           >
-            <div
-              className={`flexy gap-4 shadow-sm rounded-xl py-2.5 px-5 ${
-                theme === "light" ? "bg-[var(--soft-gray)]" : "bg-[#676464]"
-              }`}
-            >
-              <CodeIcon className="size-6" />
-              <p className="font-semibold">{t("Web Developer")}</p>
-            </div>
-          </AnimatedContent>
-          <AnimatedContent
-            distance={20}
-            direction="vertical"
-            reverse={false}
-            duration={0.8}
-            ease="easeOut"
-            initialOpacity={0}
-            animateOpacity
-            scale={1}
-            threshold={0.2}
-            delay={0.2}
-          >
-            <div
-              className={`flexy gap-4 shadow-sm rounded-xl py-2.5 px-5 ${
-                theme === "light" ? "bg-[var(--soft-gray)]" : "bg-[#676464]"
-              }`}
-            >
-              <svg
-                className="size-6"
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 392.533 392.533"
-                xmlSpace="preserve"
-                fill="#000000"
-              >
-                <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                <g
-                  id="SVGRepo_tracerCarrier"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></g>
-                <g id="SVGRepo_iconCarrier">
-                  <polygon
-                    style={{ fill: "#aedff4" }}
-                    points="21.882,351.483 37.849,370.747 354.875,370.747 370.843,351.483 370.843,321.551 21.882,321.551 "
-                  ></polygon>
-                  <path
-                    style={{ fill: "#FFFFFF" }}
-                    d="M345.566,112.097c0-6.012-4.849-10.925-10.925-10.925H292.75v18.166 c0,6.012-4.848,10.925-10.925,10.925h-9.115l6.465,6.465c4.267,4.073,4.396,10.99,0,15.451l-30.384,30.19 c-4.267,4.267-11.119,4.267-15.386,0l-6.465-6.465v9.115c0,6.012-4.848,10.925-10.925,10.925h-42.796 c-6.012,0-10.925-4.848-10.925-10.925v-9.115l-6.465,6.465c-4.267,4.267-11.119,4.267-15.386,0l-30.319-30.19 c-4.267-4.073-4.202-10.99,0-15.451l6.465-6.465h-9.115c-6.012,0-10.925-4.848-10.925-10.925v-18.101H54.787 c-6.012,0-10.925,4.848-10.925,10.925v187.604h301.705V112.097z"
-                  ></path>
-                  <path
-                    style={{ fill: "#bababa" }}
-                    d="M87.498,123.022c-12.024,0-21.786,9.762-21.786,21.786v52.105h50.489 c6.012,0,10.925,4.848,10.925,10.925c0,6.012-4.848,10.925-10.925,10.925H65.712v17.067h29.737c6.012,0,10.925,4.848,10.925,10.925 c0,6.012-4.848,10.925-10.925,10.925H65.841c0.776,11.378,10.149,20.299,21.657,20.299H301.93c12.024,0,21.786-9.762,21.786-21.786 V144.808c0-12.024-9.762-21.786-21.786-21.786"
-                  ></path>
-                  <path
-                    style={{ fill: "#aedff4" }}
-                    d="M142.641,115.846c0.711,2.069,1.616,4.202,2.651,6.335c2.069,4.202,1.228,9.18-2.069,12.541 l-9.826,9.826l14.804,14.804l9.826-9.826c3.297-3.297,8.339-4.073,12.541-2.069c2.069,1.034,4.267,1.939,6.335,2.651 c4.396,1.551,7.37,5.624,7.37,10.279v13.834h21.01v-13.834c0-4.655,2.909-8.792,7.37-10.279c2.069-0.711,4.202-1.616,6.335-2.651 c4.202-2.004,9.18-1.228,12.541,2.069l9.826,9.826l14.869-14.804l-9.826-9.826c-3.297-3.297-4.202-8.339-2.069-12.541 c1.034-2.069,1.939-4.267,2.651-6.335c1.552-4.396,5.624-7.37,10.279-7.37h13.899v-21.01H257.13c-4.655,0-8.792-2.909-10.279-7.37 c-0.711-2.069-1.616-4.202-2.651-6.271c-2.069-4.202-1.228-9.18,2.069-12.541l9.826-9.826l-14.869-14.804l-9.826,9.826 c-3.297,3.297-8.339,4.073-12.541,2.069c-2.069-1.034-4.202-1.939-6.335-2.651c-4.396-1.552-7.37-5.624-7.37-10.279V21.721h-21.01 v13.834c0,4.655-2.909,8.792-7.37,10.279c-2.069,0.711-4.202,1.616-6.335,2.651c-4.202,2.069-9.18,1.228-12.541-2.069l-9.697-9.826 l-14.804,14.869l9.826,9.826c3.297,3.297,4.202,8.339,2.069,12.541c-1.034,2.069-1.939,4.202-2.651,6.271 c-1.552,4.396-5.624,7.37-10.279,7.37h-13.899v21.01h13.899C137.017,108.477,141.09,111.45,142.641,115.846z M194.746,55.079 c23.661,0,42.861,19.265,42.861,42.861S218.342,140.8,194.746,140.8s-42.861-19.265-42.861-42.861S171.086,55.079,194.746,55.079z"
-                  ></path>
-                  <g>
-                    <path
-                      style={{ fill: "#bababa" }}
-                      d="M194.746,140.865c23.661,0,42.861-19.265,42.861-42.861s-19.265-42.861-42.861-42.861 s-42.861,19.265-42.861,42.861S171.086,140.865,194.746,140.865z M194.746,76.929c11.636,0,21.075,9.438,21.075,21.075 c0,11.572-9.503,21.075-21.075,21.075c-11.636,0-21.075-9.438-21.075-21.075S183.045,76.929,194.746,76.929z"
-                    ></path>
-                    <path
-                      style={{ fill: "#bababa" }}
-                      d="M162.811,357.042h66.974c6.012,0,10.925-4.848,10.925-10.925c0-6.012-4.848-10.925-10.925-10.925 h-66.974c-6.012,0-10.925,4.848-10.925,10.925C151.95,352.129,156.799,357.042,162.811,357.042z"
-                    ></path>
-                    <path
-                      style={{ fill: "#bababa" }}
-                      d="M381.768,299.766h-14.352V112.097c0-18.036-14.675-32.711-32.711-32.711h-41.891v-2.715 c0-6.012-4.849-10.925-10.925-10.925h-9.115l6.465-6.465c4.396-4.073,4.461-11.572,0-15.451l-30.384-30.19 c-4.267-4.267-11.119-4.267-15.386,0l-6.465,6.465v-9.18C227.005,4.913,222.156,0,216.08,0h-42.796 c-6.012,0-10.925,4.848-10.925,10.925v9.115l-6.465-6.465c-4.267-4.267-11.119-4.267-15.386,0l-30.319,30.319 c-4.331,4.461-4.331,11.313,0,15.451l6.465,6.465h-9.115c-6.012,0-10.925,4.848-10.925,10.925v2.78H54.787 c-18.036,0-32.711,14.675-32.711,32.711V299.83H10.956c-6.012,0-10.925,4.848-10.925,10.925v44.8c0,2.521,0.905,5.042,2.521,6.982 l21.851,26.052c2.069,2.457,5.172,3.943,8.339,3.943h327.111c3.232,0,6.335-1.487,8.339-3.943l21.786-26.182 c1.616-1.939,2.521-4.396,2.521-6.982v-44.8C392.629,304.614,387.78,299.766,381.768,299.766z M370.843,351.483l-15.968,19.265 H37.849l-15.968-19.265v-29.996h348.962L370.843,351.483L370.843,351.483z M43.926,112.097c0-6.012,4.848-10.925,10.925-10.925 h41.891v18.166c0,6.012,4.848,10.925,10.925,10.925h9.115l-6.465,6.465c-4.202,4.461-4.267,11.378,0,15.451l30.319,30.319 c4.267,4.267,11.119,4.267,15.386,0l6.465-6.465v9.115c0,6.012,4.848,10.925,10.925,10.925h42.796 c6.012,0,10.925-4.848,10.925-10.925v-9.115l6.465,6.465c4.267,4.267,11.119,4.267,15.386,0l30.319-30.319 c4.396-4.396,4.267-11.313,0-15.451l-6.465-6.465h9.115c6.012,0,10.925-4.848,10.925-10.925v-18.101h42.02 c6.012,0,10.925,4.848,10.925,10.925v187.604H43.926V112.097z M132.362,87.531c4.655,0,8.792-2.909,10.279-7.37 c0.711-2.069,1.616-4.202,2.651-6.271c2.069-4.202,1.228-9.18-2.069-12.541l-9.826-9.826l14.804-14.804l9.826,9.826 c3.297,3.297,8.339,4.073,12.541,2.069c2.069-1.034,4.267-1.939,6.335-2.651c4.396-1.552,7.37-5.624,7.37-10.279V21.721h21.01 v13.834c0,4.655,2.909,8.792,7.37,10.279c2.069,0.711,4.202,1.616,6.335,2.651c4.202,2.069,9.18,1.228,12.541-2.069l9.826-9.826 l14.869,14.804l-9.826,9.826c-3.297,3.297-4.202,8.339-2.069,12.541c1.034,2.069,1.939,4.202,2.651,6.271 c1.552,4.396,5.624,7.37,10.279,7.37h13.899v2.78v18.166H257.13c-4.655,0-8.792,2.909-10.279,7.37 c-0.711,2.069-1.616,4.202-2.651,6.335c-2.069,4.202-1.228,9.18,2.069,12.541l9.826,9.826l-14.869,14.869l-9.826-9.826 c-3.297-3.297-8.275-4.073-12.541-2.069c-2.069,1.034-4.267,1.939-6.335,2.651c-4.396,1.552-7.37,5.624-7.37,10.279v13.834h-21.01 v-13.834c0-4.655-2.909-8.792-7.37-10.279c-2.069-0.711-4.202-1.616-6.335-2.651c-4.202-2.004-9.18-1.228-12.541,2.069 l-9.826,9.826l-14.869-14.675l9.826-9.826c3.297-3.297,4.202-8.339,2.069-12.541c-1.034-2.069-1.939-4.267-2.65-6.335 c-1.552-4.396-5.624-7.37-10.279-7.37h-13.899V90.376v-2.78C118.463,87.531,132.362,87.531,132.362,87.531z"
-                    ></path>
-                  </g>
-                </g>
-              </svg>
-              <p className="font-semibold text-nowrap">
-                {t("IT Support Specialist")}
+            <div className="space-y-4 text-[14.5px] sm:text-[15.5px] leading-[1.75] text-[var(--text-dark)]/90">
+              <p className="text-left sm:text-justify">
+                {t("about_paragraph_1")}
+              </p>
+              <p className="text-left sm:text-justify">
+                {t("about_paragraph_2")}
               </p>
             </div>
-          </AnimatedContent>
+
+            {/* Verified Milestones Strip */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 mt-6">
+              {highlights.map((item, idx) => {
+                const IconComp = item.icon;
+                return (
+                  <div
+                    key={idx}
+                    className={`flex items-start gap-2.5 rounded-2xl px-3.5 py-3 border ${
+                      isLight
+                        ? "bg-slate-50/90 border-slate-200/80"
+                        : "bg-white/[0.04] border-white/[0.08]"
+                    }`}
+                  >
+                    <IconComp className="size-4 mt-0.5 shrink-0 text-[#0c5a84] dark:text-sky-400" />
+                    <div className="min-w-0">
+                      <p className="text-xs font-bold text-[var(--text-dark)] truncate">
+                        {item.label}
+                      </p>
+                      <p
+                        className={`text-[11.5px] leading-snug mt-0.5 ${
+                          isLight ? "text-slate-600" : "text-slate-400"
+                        }`}
+                      >
+                        {item.detail}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </FadeContent>
+
+          {/* Right: 3 Core Specialty Cards */}
+          <div className="flex flex-col gap-3">
+            {pillars.map((pillar, index) => {
+              const IconComp = pillar.icon;
+              return (
+                <AnimatedContent
+                  key={index}
+                  distance={18}
+                  direction="vertical"
+                  reverse={false}
+                  duration={0.65}
+                  ease="easeOut"
+                  initialOpacity={0}
+                  animateOpacity
+                  threshold={0.15}
+                  delay={0.08 * (index + 1)}
+                >
+                  <div
+                    className={`group flex items-start gap-3.5 rounded-2xl p-4 border transition-all duration-200 ${
+                      isLight
+                        ? "bg-slate-50/85 hover:bg-white border-slate-200/85 hover:border-[#0c5a84]/35 hover:shadow-sm"
+                        : "bg-white/[0.04] hover:bg-white/[0.07] border-white/[0.08] hover:border-sky-400/30"
+                    }`}
+                  >
+                    <span
+                      className={`size-10 shrink-0 rounded-xl flex items-center justify-center transition-colors ${
+                        isLight
+                          ? "bg-[#0c5a84]/10 text-[#0c5a84] group-hover:bg-[#0c5a84] group-hover:text-white"
+                          : "bg-sky-400/15 text-sky-300 group-hover:bg-sky-400 group-hover:text-slate-950"
+                      }`}
+                    >
+                      <IconComp className="size-5" />
+                    </span>
+                    <div className="min-w-0">
+                      <h3 className="font-bold text-sm sm:text-[15px] text-[var(--text-dark)]">
+                        {pillar.title}
+                      </h3>
+                      <p
+                        className={`text-xs sm:text-[13px] leading-relaxed mt-1 ${
+                          isLight ? "text-slate-600" : "text-slate-400"
+                        }`}
+                      >
+                        {pillar.desc}
+                      </p>
+                    </div>
+                  </div>
+                </AnimatedContent>
+              );
+            })}
+          </div>
         </div>
-      </div>
-      <div>
-        <AnimatedContent
-          distance={10}
-          direction="horizontal"
-          reverse={true}
-          duration={0.8}
-          ease="easeOut"
-          initialOpacity={0}
-          animateOpacity
-          scale={1}
-          threshold={0.2}
-          delay={0.2}
-        >
-          <h1 className="font-bold text-2xl max-[850px]:hidden">
-            {t("About Me")}
-          </h1>
-        </AnimatedContent>
-        <FadeContent
-          blur={true}
-          duration={1100}
-          easing="ease-out"
-          delay={300}
-          initialOpacity={0}
-        >
-          <p className="text-justify mt-4 mb-6 max-sm:text-sm max-sm:mt-8!">
-            {t("about_paragraph_1")}
-            <br />
-            {t("about_paragraph_2")}
-          </p>
-        </FadeContent>
-      </div>
-      <div className="flexy justify-around! flex-col gap-6 max-sm:gap-4 max-[850px]:flex-row min-[850px]:hidden! max-[550px]:flex-col">
-        <AnimatedContent
-          distance={20}
-          direction="vertical"
-          reverse={false}
-          duration={0.8}
-          ease="easeOut"
-          initialOpacity={0}
-          animateOpacity
-          scale={1}
-          threshold={0.2}
-          delay={0.1}
-        >
-          <div
-            className={`flexy gap-4 shadow-sm rounded-full py-2.5 px-5 ${
-              theme === "light" ? "bg-[var(--soft-gray)]" : "bg-[#676464]"
-            }`}
-          >
-            <CodeIcon className="size-6 max-sm:size-5" />
-            <p className="font-semibold max-sm:text-sm">{t("Web Developer")}</p>
-          </div>
-        </AnimatedContent>
-        <AnimatedContent
-          distance={20}
-          direction="vertical"
-          reverse={false}
-          duration={0.8}
-          ease="easeOut"
-          initialOpacity={0}
-          animateOpacity
-          scale={1}
-          threshold={0.2}
-          delay={0.2}
-        >
-          <div
-            className={`flexy gap-4 shadow-sm rounded-full py-2.5 px-5 ${
-              theme === "light" ? "bg-[var(--soft-gray)]" : "bg-[#676464]"
-            }`}
-          >
-            <svg
-              className="size-6 max-sm:size-5"
-              version="1.1"
-              id="Layer_1"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlnsXlink="http://www.w3.org/1999/xlink"
-              viewBox="0 0 392.533 392.533"
-              xmlSpace="preserve"
-              fill="#000000"
-            >
-              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-              <g
-                id="SVGRepo_tracerCarrier"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              ></g>
-              <g id="SVGRepo_iconCarrier">
-                <polygon
-                  style={{ fill: "#aedff4" }}
-                  points="21.882,351.483 37.849,370.747 354.875,370.747 370.843,351.483 370.843,321.551 21.882,321.551 "
-                ></polygon>
-                <path
-                  style={{ fill: "#FFFFFF" }}
-                  d="M345.566,112.097c0-6.012-4.849-10.925-10.925-10.925H292.75v18.166 c0,6.012-4.848,10.925-10.925,10.925h-9.115l6.465,6.465c4.267,4.073,4.396,10.99,0,15.451l-30.384,30.19 c-4.267,4.267-11.119,4.267-15.386,0l-6.465-6.465v9.115c0,6.012-4.848,10.925-10.925,10.925h-42.796 c-6.012,0-10.925-4.848-10.925-10.925v-9.115l-6.465,6.465c-4.267,4.267-11.119,4.267-15.386,0l-30.319-30.19 c-4.267-4.073-4.202-10.99,0-15.451l6.465-6.465h-9.115c-6.012,0-10.925-4.848-10.925-10.925v-18.101H54.787 c-6.012,0-10.925,4.848-10.925,10.925v187.604h301.705V112.097z"
-                ></path>
-                <path
-                  style={{ fill: "#bababa" }}
-                  d="M87.498,123.022c-12.024,0-21.786,9.762-21.786,21.786v52.105h50.489 c6.012,0,10.925,4.848,10.925,10.925c0,6.012-4.848,10.925-10.925,10.925H65.712v17.067h29.737c6.012,0,10.925,4.848,10.925,10.925 c0,6.012-4.848,10.925-10.925,10.925H65.841c0.776,11.378,10.149,20.299,21.657,20.299H301.93c12.024,0,21.786-9.762,21.786-21.786 V144.808c0-12.024-9.762-21.786-21.786-21.786"
-                ></path>
-                <path
-                  style={{ fill: "#aedff4" }}
-                  d="M142.641,115.846c0.711,2.069,1.616,4.202,2.651,6.335c2.069,4.202,1.228,9.18-2.069,12.541 l-9.826,9.826l14.804,14.804l9.826-9.826c3.297-3.297,8.339-4.073,12.541-2.069c2.069,1.034,4.267,1.939,6.335,2.651 c4.396,1.551,7.37,5.624,7.37,10.279v13.834h21.01v-13.834c0-4.655,2.909-8.792,7.37-10.279c2.069-0.711,4.202-1.616,6.335-2.651 c4.202-2.004,9.18-1.228,12.541,2.069l9.826,9.826l14.869-14.804l-9.826-9.826c-3.297-3.297-4.202-8.339-2.069-12.541 c1.034-2.069,1.939-4.267,2.651-6.335c1.552-4.396,5.624-7.37,10.279-7.37h13.899v-21.01H257.13c-4.655,0-8.792-2.909-10.279-7.37 c-0.711-2.069-1.616-4.202-2.651-6.271c-2.069-4.202-1.228-9.18,2.069-12.541l9.826-9.826l-14.869-14.804l-9.826,9.826 c-3.297,3.297-8.339,4.073-12.541,2.069c-2.069-1.034-4.202-1.939-6.335-2.651c-4.396-1.552-7.37-5.624-7.37-10.279V21.721h-21.01 v13.834c0,4.655-2.909,8.792-7.37,10.279c-2.069,0.711-4.202,1.616-6.335,2.651c-4.202,2.069-9.18,1.228-12.541-2.069l-9.697-9.826 l-14.804,14.869l9.826,9.826c3.297,3.297,4.202,8.339,2.069,12.541c-1.034,2.069-1.939,4.202-2.651,6.271 c-1.552,4.396-5.624,7.37-10.279,7.37h-13.899v21.01h13.899C137.017,108.477,141.09,111.45,142.641,115.846z M194.746,55.079 c23.661,0,42.861,19.265,42.861,42.861S218.342,140.8,194.746,140.8s-42.861-19.265-42.861-42.861S171.086,55.079,194.746,55.079z"
-                ></path>
-                <g>
-                  <path
-                    style={{ fill: "#bababa" }}
-                    d="M194.746,140.865c23.661,0,42.861-19.265,42.861-42.861s-19.265-42.861-42.861-42.861 s-42.861,19.265-42.861,42.861S171.086,140.865,194.746,140.865z M194.746,76.929c11.636,0,21.075,9.438,21.075,21.075 c0,11.572-9.503,21.075-21.075,21.075c-11.636,0-21.075-9.438-21.075-21.075S183.045,76.929,194.746,76.929z"
-                  ></path>
-                  <path
-                    style={{ fill: "#bababa" }}
-                    d="M162.811,357.042h66.974c6.012,0,10.925-4.848,10.925-10.925c0-6.012-4.848-10.925-10.925-10.925 h-66.974c-6.012,0-10.925,4.848-10.925,10.925C151.95,352.129,156.799,357.042,162.811,357.042z"
-                  ></path>
-                  <path
-                    style={{ fill: "#bababa" }}
-                    d="M381.768,299.766h-14.352V112.097c0-18.036-14.675-32.711-32.711-32.711h-41.891v-2.715 c0-6.012-4.849-10.925-10.925-10.925h-9.115l6.465-6.465c4.396-4.073,4.461-11.572,0-15.451l-30.384-30.19 c-4.267-4.267-11.119-4.267-15.386,0l-6.465,6.465v-9.18C227.005,4.913,222.156,0,216.08,0h-42.796 c-6.012,0-10.925,4.848-10.925,10.925v9.115l-6.465-6.465c-4.267-4.267-11.119-4.267-15.386,0l-30.319,30.319 c-4.331,4.461-4.331,11.313,0,15.451l6.465,6.465h-9.115c-6.012,0-10.925,4.848-10.925,10.925v2.78H54.787 c-18.036,0-32.711,14.675-32.711,32.711V299.83H10.956c-6.012,0-10.925,4.848-10.925,10.925v44.8c0,2.521,0.905,5.042,2.521,6.982 l21.851,26.052c2.069,2.457,5.172,3.943,8.339,3.943h327.111c3.232,0,6.335-1.487,8.339-3.943l21.786-26.182 c1.616-1.939,2.521-4.396,2.521-6.982v-44.8C392.629,304.614,387.78,299.766,381.768,299.766z M370.843,351.483l-15.968,19.265 H37.849l-15.968-19.265v-29.996h348.962L370.843,351.483L370.843,351.483z M43.926,112.097c0-6.012,4.848-10.925,10.925-10.925 h41.891v18.166c0,6.012,4.848,10.925,10.925,10.925h9.115l-6.465,6.465c-4.202,4.461-4.267,11.378,0,15.451l30.319,30.319 c4.267,4.267,11.119,4.267,15.386,0l6.465-6.465v9.115c0,6.012,4.848,10.925,10.925,10.925h42.796 c6.012,0,10.925-4.848,10.925-10.925v-9.115l6.465,6.465c4.267,4.267,11.119,4.267,15.386,0l30.319-30.319 c4.396-4.396,4.267-11.313,0-15.451l-6.465-6.465h9.115c6.012,0,10.925-4.848,10.925-10.925v-18.101h42.02 c6.012,0,10.925,4.848,10.925,10.925v187.604H43.926V112.097z M132.362,87.531c4.655,0,8.792-2.909,10.279-7.37 c0.711-2.069,1.616-4.202,2.651-6.271c2.069-4.202,1.228-9.18-2.069-12.541l-9.826-9.826l14.804-14.804l9.826,9.826 c3.297,3.297,8.339,4.073,12.541,2.069c2.069-1.034,4.267-1.939,6.335-2.651c4.396-1.552,7.37-5.624,7.37-10.279V21.721h21.01 v13.834c0,4.655,2.909,8.792,7.37,10.279c2.069,0.711,4.202,1.616,6.335,2.651c4.202,2.069,9.18,1.228,12.541-2.069l9.826-9.826 l14.869,14.804l-9.826,9.826c-3.297,3.297-4.202,8.339-2.069,12.541c1.034,2.069,1.939,4.202,2.651,6.271 c1.552,4.396,5.624,7.37,10.279,7.37h13.899v2.78v18.166H257.13c-4.655,0-8.792,2.909-10.279,7.37 c-0.711,2.069-1.616,4.202-2.651,6.335c-2.069,4.202-1.228,9.18,2.069,12.541l9.826,9.826l-14.869,14.869l-9.826-9.826 c-3.297-3.297-8.275-4.073-12.541-2.069c-2.069,1.034-4.267,1.939-6.335,2.651c-4.396,1.552-7.37,5.624-7.37,10.279v13.834h-21.01 v-13.834c0-4.655-2.909-8.792-7.37-10.279c-2.069-0.711-4.202-1.616-6.335-2.651c-4.202-2.004-9.18-1.228-12.541,2.069 l-9.826,9.826l-14.869-14.675l9.826-9.826c3.297-3.297,4.202-8.339,2.069-12.541c-1.034-2.069-1.939-4.267-2.65-6.335 c-1.552-4.396-5.624-7.37-10.279-7.37h-13.899V90.376v-2.78C118.463,87.531,132.362,87.531,132.362,87.531z"
-                  ></path>
-                </g>
-              </g>
-            </svg>
-            <p className="font-semibold max-sm:text-sm">
-              {t("IT Support Specialist")}
-            </p>
-          </div>
-        </AnimatedContent>
       </div>
     </section>
   );

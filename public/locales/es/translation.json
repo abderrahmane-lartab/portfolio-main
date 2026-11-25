@@ -1,110 +1,216 @@
 {
-    "Home": "Inicio",
-    "About": "Sobre mí",
-    "Skills": "Habilidades",
-    "Projects": "Proyectos",
-    "Education & Experience": "Educación y Experiencia",
-    "Contact Me": "Contáctame",
-    "Full Stack Developer": "Desarrollador Full Stack",
-    "bio": "Hola, soy Abderrahmane Lartab, un apasionado Desarrollador Web Full-Stack de Casablanca, Marruecos. Construyo aplicaciones web modernas y escalables que convierten ideas en experiencias digitales.",
-    "Contact": "Contacto",
-    "View CV": "Ver CV",
-    "Scroll Down": "Desplazar hacia abajo",
-    "About Me": "Sobre mí",
-    "Web Developer": "Desarrollador Web",
-    "IT Support Specialist": "Especialista en Soporte Técnico",
-    "about_paragraph_1": "Como Desarrollador Web Full-Stack Junior y Técnico en Informática de Casablanca, Marruecos, me especializo en construir aplicaciones modernas y escalables con React y Laravel. Disfruto creando soluciones digitales completas — desde interfaces front-end intuitivas hasta APIs back-end seguras y eficientes. Mi experiencia en mantenimiento de computadoras y soporte de sistemas fortalece mi comprensión de cómo el software y el hardware trabajan juntos para ofrecer resultados confiables.",
-    "about_paragraph_2": "Impulsado por la curiosidad y el crecimiento continuo, siempre estoy explorando nuevas tecnologías y mejores prácticas para mantenerme a la vanguardia en un panorama tecnológico en rápida evolución. Mi trabajo refleja un fuerte equilibrio entre código limpio, experiencia de usuario y rendimiento, y me esfuerzo por construir aplicaciones que no solo sean funcionales y elegantes, sino también significativas e impactantes — ya sea trabajando de forma independiente o dentro de un equipo.",
-    "Skills & Technologies": "Habilidades y Tecnologías",
-    "Frontend": "Frontend",
-    "Backend": "Backend",
-    "Databases": "Bases de datos",
-    "Technologies": "Tecnologías",
-    "Each project is a unique piece of development": "Cada proyecto es una pieza única de desarrollo",
-    "Open Project": "Abrir Proyecto",
-    "mihna_description": "Una plataforma de empleo full-stack que conecta a candidatos y empresas mediante ofertas modernas, seguimiento de solicitudes, notificaciones en tiempo real y soporte asistido por IA.",
-    "okad_description": "Una plataforma escolar responsive y optimizada para SEO que destaca los valores, actividades y eventos de la institución mediante una experiencia limpia y dinámica.",
-    "youchef_description": "Una plataforma colaborativa de recetas donde los usuarios pueden compartir, descubrir y guardar ideas culinarias a través de una interfaz atractiva y responsiva.",
-    "foody_description": "Un elegante sitio web de restaurante diseñado para mostrar el menú y la marca con una experiencia moderna, fluida y fácil de usar.",
-    "parksmart_description": "Un sistema inteligente de gestión de estacionamiento que ayuda a los conductores a encontrar plazas disponibles en tiempo real y ofrece a los operadores un mejor control de sus operaciones diarias.",
-    "pipeline_description": "Una plataforma de gestión de pipeline con enfoque CRM diseñada para simplificar los flujos de ventas, rastrear leads y mejorar la gestión de relaciones con clientes.",
-    "technews_description": "Una moderna plataforma de noticias tecnológicas con actualizaciones en tiempo real, categorías organizadas y una experiencia de lectura cuidada en todos los dispositivos.",
-    "somadix_description": "SOMADIX es una empresa especializada en diversos trabajos empresariales y de construcción, fundada por un profesional del terreno con una amplia experiencia en el mercado. Se encarga del estudio y la ejecución de proyectos únicos o separados con rigor, eficiencia y un fuerte compromiso con la satisfacción del cliente.",
-    "technews_title": "TechNews - Plataforma de Noticias Tecnológicas",
-    "Technologies Used": "Tecnologías Utilizadas",
-    "Key Features": "Características Clave",
-    "Real-time news updates from multiple sources": "Actualizaciones de noticias en tiempo real de múltiples fuentes",
-    "Categorized technology articles": "Artículos de tecnología categorizados",
-    "Responsive design for all devices": "Diseño responsivo para todos los dispositivos",
-    "Search and filter functionality": "Funcionalidad de búsqueda y filtrado",
-    "Bookmark and save articles": "Marcar y guardar artículos",
-    "Education": "Educación",
-    "Experience": "Experiencia",
-    "education": {
-      "items": [
-        {
-          "title": "Programa de Desarrollo Web Full Stack",
-          "institution": "OFPPT ISAG AL Fida",
-          "location": "Casablanca, Marruecos",
-          "period": "En progreso"
-        },
-        {
-          "title": "Diploma de Bachillerato (Ciencias Físicas)",
-          "institution": "Lycée Homan El Fatwaki",
-          "location": "Casablanca, Marruecos",
-          "period": "2024"
-        }
-      ]
-    },
-    "experience": {
-      "items": [
-        {
-          "title": "Participación en Hackathon 2024",
-          "institution": "OFPPT - ISGI",
-          "period": "05/2024 - 05/2024",
-          "description": "Crear una plataforma de estacionamiento durante el hackathon.\\nRecompensa: 6º premio"
-        }
-      ]
-    },
-    "Certificates": "Certificados",
-    "Open": "Abrir",
-    "certificates": {
-      "items": [
-        {
-          "name": "Bootcamp Git & Github",
-          "photo": "Certif1.png",
-          "platform": "Udemy",
-          "owner": "Udemy",
-          "technologies": ["Git", "Github"],
-          "date": "2025"
-        },
-        {
-          "name": "Curso React",
-          "photo": "Certif2.png",
-          "platform": "Meta",
-          "owner": "Meta",
-          "technologies": ["React", "JavaScript"],
-          "date": "2025"
-        },
-        {
-          "name": "Introducción a Docker",
-          "photo": "Certif3.png",
-          "platform": "KodeCloud",
-          "owner": "KodeCloud",
-          "technologies": ["Docker", "Contenedores"],
-          "date": "2025"
-        }
-      ]
-    },
-    "Resume": "Currículum",
-    "Available for work": "Disponible para trabajar",
-    "Let's build something": "Construyamos algo",
-    "incredible together!": "increíble juntos!",
-    "2025 Mohamed Maimoune. All rights reserved": "2025 Abderrahmane Lartab. Todos los derechos reservados",
-    "Let's start a project together": "Empecemos un proyecto juntos",
-    "Name": "Nombre",
-    "Email": "Correo electrónico",
-    "Message": "Mensaje",
-    "Text Message...": "Escribe tu mensaje...",
-    "Send Message": "Enviar mensaje"
-  }
+  "Home": "Inicio",
+  "About": "Sobre mí",
+  "Skills": "Habilidades",
+  "Projects": "Proyectos",
+  "Education & Experience": "Educación y Experiencia",
+  "Contact Me": "Contáctame",
+  "Full Stack Developer": "Desarrollador Full Stack e IA",
+  "AI & Full Stack Developer": "Desarrollador Full Stack e IA",
+  "Full Stack & AI Developer": "Desarrollador Full Stack e IA",
+  "AI • Machine Learning • Full Stack": "IA • Machine Learning • Full Stack",
+  "hero_roles": [
+    "Desarrollador Full Stack e IA",
+    "Machine Learning y Visión Artificial",
+    "Data Engineering y Cloud"
+  ],
+  "bio": "Hola, soy Abderrahmane Lartab, Desarrollador Full Stack e IA de Casablanca, Marruecos. Actualmente en el programa AI Developer en YouCode, construyo software inteligente combinando React, Next.js, TypeScript, Laravel y FastAPI con Machine Learning y Azure Cloud.",
+  "Contact": "Contacto",
+  "Scroll Down": "Desplazar hacia abajo",
+  "About Me": "Sobre mí",
+  "AI & ML Developer": "Desarrollador de IA y ML",
+  "Web Developer": "Desarrollador Full Stack",
+  "IT Support Specialist": "Data y Cloud",
+  "about_paragraph_1": "Soy Abderrahmane Lartab, Desarrollador Full Stack e IA de Casablanca, Marruecos. Actualmente curso el programa AI Developer en YouCode (2026–2027) tras completar Desarrollo Web Full Stack en OFPPT – ISAG Lalla Aicha (2024–2026) y realizar prácticas en BRT Solutions en una plataforma SaaS de gestión escolar. Desarrollo aplicaciones web modernas con React.js, Next.js, TypeScript, Laravel, Node.js y FastAPI.",
+  "about_paragraph_2": "En IA y datos trabajo con Python, Scikit-learn, TensorFlow, Keras, PyTorch y YOLOv8 para Machine Learning, Deep Learning y Visión Artificial — junto con Azure Data Factory, ADLS Gen2, Azure ML, PySpark, Apache Airflow, MLflow y Docker. Mi objetivo a largo plazo es crear productos de software inteligentes que integren tecnologías web modernas, modelos de IA, LLMs e infraestructura cloud.",
+  "about_pillar_ai_title": "IA y Machine Learning",
+  "about_pillar_ai_desc": "Python, Scikit-learn, TensorFlow, Keras, PyTorch, YOLOv8, Visión Artificial y LLMs.",
+  "about_pillar_fs_title": "Desarrollo Full Stack",
+  "about_pillar_fs_desc": "React.js, Next.js, TypeScript, PHP, Laravel, Node.js, FastAPI y APIs REST.",
+  "about_pillar_data_title": "Data Engineering y Cloud",
+  "about_pillar_data_desc": "Azure Data Factory, ADLS Gen2, Azure ML, PySpark, Apache Airflow, MLflow y Docker.",
+  "about_highlight_youcode": "Programa AI Developer · 2026–2027",
+  "about_highlight_ofppt": "Desarrollo Web Full Stack · 2024–2026",
+  "about_highlight_brt": "Prácticas SaaS Full Stack · 2026",
+  "Skills & Technologies": "Habilidades y Tecnologías",
+  "AI & ML": "IA y ML",
+  "Machine Learning": "Machine Learning",
+  "Deep Learning": "Deep Learning",
+  "LLMs & Prompting": "LLMs y Prompting",
+  "AI Integrations": "Integraciones IA",
+  "Frontend": "Frontend",
+  "Backend": "Backend",
+  "Databases": "Bases de datos",
+  "Technologies": "Tecnologías",
+  "Data & Cloud": "Data y Cloud",
+  "Tools & Linux": "Herramientas y Linux",
+  "Recent projects": "Proyectos recientes",
+  "Tech stack": "Stack técnico",
+  "Availability": "Disponibilidad",
+  "Contact info": "Contacto",
+  "Ask AI anything about Abderrahmane...": "Pregunta a la IA sobre Abderrahmane...",
+  "Abderrahmane AI Assistant": "Asistente IA de Abderrahmane",
+  "View conversation": "Ver conversación",
+  "Clear conversation": "Limpiar chat",
+  "Minimize chat": "Minimizar chat",
+  "Send message": "Enviar",
+  "ai_prompt_projects": "Cuéntame sobre los proyectos recientes de Abderrahmane.",
+  "ai_prompt_stack": "¿Cuál es el stack de IA y Full Stack de Abderrahmane?",
+  "ai_prompt_availability": "¿Está disponible Abderrahmane para trabajo o prácticas y cuáles son sus objetivos?",
+  "ai_prompt_contact": "¿Cómo puedo contactar con Abderrahmane Lartab?",
+  "Voice Introduction": "Presentación de Voz",
+  "Play voice introduction": "Reproducir presentación de voz",
+  "Pause voice introduction": "Pausar presentación de voz",
+  "Replay": "Repetir",
+  "Toggle transcript": "Ver transcripción",
+  "Each project is a unique piece of development": "Cada proyecto es una pieza única de desarrollo",
+  "Open Project": "Abrir Proyecto",
+  "mihna_description": "Una plataforma de empleo full-stack que conecta a candidatos y empresas mediante ofertas modernas, seguimiento de solicitudes, notificaciones en tiempo real y soporte asistido por IA.",
+  "okad_description": "Una plataforma escolar responsive y optimizada para SEO que destaca los valores, actividades y eventos de la institución mediante una experiencia limpia y dinámica.",
+  "youchef_description": "Una plataforma colaborativa de recetas donde los usuarios pueden compartir, descubrir y guardar ideas culinarias a través de una interfaz atractiva y responsiva.",
+  "foody_description": "Un elegante sitio web de restaurante diseñado para mostrar el menú y la marca con una experiencia moderna, fluida y fácil de usar.",
+  "parksmart_description": "Un sistema inteligente de gestión de estacionamiento que ayuda a los conductores a encontrar plazas disponibles en tiempo real y ofrece a los operadores un mejor control de sus operaciones diarias.",
+  "pipeline_description": "Una plataforma de gestión de pipeline con enfoque CRM diseñada para simplificar los flujos de ventas, rastrear leads y mejorar la gestión de relaciones con clientes.",
+  "technews_description": "Una moderna plataforma de noticias tecnológicas con actualizaciones en tiempo real, categorías organizadas y una experiencia de lectura cuidada en todos los dispositivos.",
+  "somadix_description": "SOMADIX es una empresa especializada en diversos trabajos empresariales y de construcción, fundada por un profesional del terreno con una amplia experiencia en el mercado. Se encarga del estudio y la ejecución de proyectos únicos o separados con rigor, eficiencia y un fuerte compromiso con la satisfacción del cliente.",
+  "technews_title": "TechNews - Plataforma de Noticias Tecnológicas",
+  "Technologies Used": "Tecnologías Utilizadas",
+  "Key Features": "Características Clave",
+  "Real-time news updates from multiple sources": "Actualizaciones de noticias en tiempo real de múltiples fuentes",
+  "Categorized technology articles": "Artículos de tecnología categorizados",
+  "Responsive design for all devices": "Diseño responsivo para todos los dispositivos",
+  "Search and filter functionality": "Funcionalidad de búsqueda y filtrado",
+  "Bookmark and save articles": "Marcar y guardar artículos",
+  "Education": "Educación",
+  "Experience": "Experiencia",
+  "education": {
+    "items": [
+      {
+        "title": "Programa AI Developer",
+        "institution": "YouCode",
+        "location": "Marruecos",
+        "period": "2026 – 2027 (En curso)",
+        "description": "Formación práctica centrada en preparación de datos, machine learning, deep learning, APIs inteligentes, servicios externos de IA y MLOps."
+      },
+      {
+        "title": "Desarrollo Web Full Stack",
+        "institution": "OFPPT – ISAG Lalla Aicha",
+        "location": "Casablanca, Marruecos",
+        "period": "2024 – 2026",
+        "description": "Formación en desarrollo frontend, backend, bases de datos, APIs e ingeniería de software."
+      },
+      {
+        "title": "Diploma de Bachillerato (Ciencias Físicas)",
+        "institution": "Lycée Homan El Fatwaki",
+        "location": "Casablanca, Marruecos",
+        "period": "2024"
+      }
+    ]
+  },
+  "experience": {
+    "items": [
+      {
+        "title": "Prácticas de Desarrollador Full Stack",
+        "institution": "BRT Solutions",
+        "period": "Marzo 2026 – Abril 2026",
+        "description": "Trabajo en una aplicación SaaS de gestión escolar. Contribución al desarrollo frontend y funciones de estudiantes, clases, pagos, administración y SMS.\\nColaboración para mejorar la experiencia de usuario."
+      },
+      {
+        "title": "Participación en Hackathon 2024",
+        "institution": "OFPPT - ISGI",
+        "period": "05/2024",
+        "description": "Creación de una plataforma inteligente de estacionamiento durante el hackathon.\\nRecompensa: 6º premio"
+      }
+    ]
+  },
+  "Certificates": "Certificados",
+  "Open": "Vista previa",
+  "Verify": "Verificar",
+  "Additional Certifications": "Certificaciones Adicionales",
+  "certificates": {
+    "items": [
+      {
+        "name": "Google AI Essentials",
+        "photo": "Certif4.png",
+        "platform": "Google · Coursera (5 Cursos)",
+        "owner": "Google",
+        "link": "https://coursera.org/verify/specialization/16025RB490YA",
+        "technologies": [
+          "IA",
+          "Prompting"
+        ],
+        "date": "2026"
+      },
+      {
+        "name": "Meta React Basics",
+        "photo": "Certif2.png",
+        "platform": "Meta · Coursera",
+        "owner": "Meta",
+        "link": "https://coursera.org/verify/YQIBW9NGSFFX",
+        "technologies": [
+          "React.js",
+          "JavaScript"
+        ],
+        "date": "2025"
+      },
+      {
+        "name": "Bootcamp Git & GitHub",
+        "photo": "Certif1.png",
+        "platform": "Udemy",
+        "owner": "Udemy",
+        "link": "https://ude.my/UC-96a93d90-5629-464f-8796-ee94fa980db5",
+        "technologies": [
+          "Git",
+          "GitHub"
+        ],
+        "date": "2025"
+      },
+      {
+        "name": "Introducción a Docker",
+        "photo": "Certif3.png",
+        "platform": "KodeKloud",
+        "owner": "KodeKloud",
+        "technologies": [
+          "Docker",
+          "Contenedores"
+        ],
+        "date": "2025"
+      }
+    ],
+    "additional": [
+      {
+        "name": "Estructuras de Bases de Datos MySQL",
+        "issuer": "Meta"
+      },
+      {
+        "name": "Web Development Fundamentals Camp",
+        "issuer": "Boolean"
+      },
+      {
+        "name": "Soft Skills",
+        "issuer": "IBM"
+      }
+    ]
+  },
+  "Full Stack Web": "Full Stack Web",
+  "Deep Learning & CV": "Deep Learning y Visión",
+  "Data Engineering & ML": "Data Engineering y ML",
+  "Other Projects": "Otros Proyectos",
+  "braintumor_description": "Proyecto de deep learning y visión artificial para la clasificación y detección de tumores cerebrales en imágenes de resonancia magnética (Glioma, Meningioma, No Tumor, Pituitary) con TensorFlow, Keras, GoogLeNet, YOLOv8, MLflow, FastAPI y Streamlit.",
+  "dataco_description": "Proyecto integral de ingeniería de datos y machine learning en Azure centrado en la predicción de consumo mediante Azure Data Factory, Azure Data Lake Storage Gen2, Azure Compute y Azure Machine Learning.",
+  "churn_description": "Proyecto de machine learning para predecir el abandono de clientes (churn) usando Python, Pandas, NumPy y Scikit-learn — incluyendo análisis exploratorio (EDA), preprocesamiento, clasificación KNN y evaluación del modelo.",
+  "Available for work": "Disponible para trabajar",
+  "Let's build something": "Construyamos algo",
+  "incredible together!": "increíble juntos!",
+  "2025 Abderrahmane Lartab. All rights reserved": "2025 Abderrahmane Lartab. Todos los derechos reservados",
+  "Let's start a project together": "Empecemos un proyecto juntos",
+  "Name": "Nombre",
+  "Email": "Correo electrónico",
+  "Message": "Mensaje",
+  "Text Message...": "Escribe tu mensaje...",
+  "Send Message": "Enviar mensaje",
+  "All": "Todos",
+  "Previous": "Ant.",
+  "Next": "Sig.",
+  "digitech_description": "Plataforma de comercio electrónico full-stack de productos tecnológicos con catálogo dinámico, autenticación de usuarios, carrito y gestión de pedidos — desarrollada con React.js y una API REST en Laravel."
+}

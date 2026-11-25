@@ -98,7 +98,11 @@ export const Footer = () => {
           delay={400}
           initialOpacity={0}
         >
-          <a href="https://github.com/Abderrahmane-lrt" target="_blank">
+          <a
+            href="https://github.com/abderrahmane-lartab"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <svg
               viewBox="0 0 24 24"
               fill="none"

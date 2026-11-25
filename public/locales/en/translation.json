@@ -1,139 +1,245 @@
 {
-    "Home": "Home",
-    "About": "About",
-    "Skills": "Skills",
-    "Projects": "Projects",
-    "Education & Experience": "Education & Experience",
-    "Contact Me": "Contact Me",
-    "Full Stack Developer": "Full Stack Developer",
-    "bio": "Hi, I'm Abderrahmane Lartab, a passionate Full-Stack Web Developer from Casablanca, Morocco. I specialize in creating modern, scalable web applications that transform ideas into engaging digital experiences.",
-    "Contact": "Contact",
-    "View CV": "View CV",
-    "Scroll Down": "Scroll Down",
-    "About Me": "About Me",
-    "Web Developer": "Web Developer",
-    "IT Support Specialist": "IT Support Specialist",
-    "about_paragraph_1": "As a Junior Full-Stack Web Developer and IT Technician from Casablanca, Morocco, I specialize in building modern, scalable applications with React and Laravel. I enjoy crafting complete digital solutions — from intuitive front-end interfaces to secure and efficient back-end APIs. My background in computer maintenance and system support strengthens my understanding of how software and hardware work together to deliver reliable results.",
-    "about_paragraph_2": "Driven by curiosity and continuous growth, I'm always exploring new technologies and best practices to stay ahead in a fast-evolving tech landscape. My work reflects a strong balance between clean code, user experience, and performance, and I strive to build applications that are not only functional and elegant but also meaningful and impactful — whether working independently or within a team.",
-    "Skills & Technologies": "Skills & Technologies",
-    "Frontend": "Frontend",
-    "Backend": "Backend",
-    "Databases": "Databases",
-    "Technologies": "Technologies",
-    "Each project is a unique piece of development": "Each project is a unique piece of development",
-    "Open Project": "Open Project",
-    "mihna_description": "A full-stack job platform that connects candidates and companies through modern listings, application tracking, real-time notifications, and AI-assisted support.",
-    "okad_description": "A responsive and SEO-friendly school platform that highlights the institution’s values, activities, and events through a clean and dynamic experience.",
-    "youchef_description": "A collaborative recipe platform where users can share, discover, and save culinary ideas through an engaging and responsive interface.",
-    "foody_description": "A stylish restaurant website designed to showcase the menu and brand with a smooth, modern, and user-friendly experience.",
-    "parksmart_description": "An intelligent parking management system that helps drivers find available spots in real time while giving operators better control over daily operations.",
-    "pipeline_description": "A CRM-style pipeline management platform built to simplify sales workflows, track leads, and improve customer relationship management.",
-    "technews_description": "A modern technology news platform delivering real-time updates, organized categories, and a polished reading experience across devices.",
-    "somadix_description": "SOMADIX is a company specialized in diverse business and construction works, founded by a field professional with long-standing market experience. It handles studies and execution of one-off or separate projects with rigor, efficiency, and a strong commitment to client satisfaction.",
-    "technews_title": "TechNews - Technology News Platform",
-    "Technologies Used": "Technologies Used",
-    "Key Features": "Key Features",
-    "Real-time news updates from multiple sources": "Real-time news updates from multiple sources",
-    "Categorized technology articles": "Categorized technology articles",
-    "Responsive design for all devices": "Responsive design for all devices",
-    "Search and filter functionality": "Search and filter functionality",
-    "Bookmark and save articles": "Bookmark and save articles",
-    "Education": "Education",
-    "Experience": "Experience",
-    "education": {
-      "items": [
-        {
-          "title": "Full Stack Web Development Program",
-          "institution": "OFPPT ISAG AL Fida",
-          "location": "Casablanca, Morocco",
-          "period": "In progress"
-        },
-        {
-          "title": "High School Diploma (Physical Sciences)",
-          "institution": "Lycée Homan El Fatwaki",
-          "location": "Casablanca, Morocco",
-          "period": "2024"
-        }
-      ]
-    },
-    "experience": {
-      "items": [
-        {
-          "title": "Participation in 2024 Hackathon",
-          "institution": "OFPPT - ISGI",
-          "period": "05/2024 - 05/2024",
-          "description": "Create a parking platform during the hackathon.\\nReward: 6th prize"
-        }
-      ]
-    },
-    "Certificates": "Certificates",
-    "Open": "Open",
-    "certificates": {
-      "items": [
-        {
-          "name": "The Git & Github Bootcamp",
-          "photo": "Certif1.png",
-          "platform": "Udemy",
-          "owner": "Udemy",
-          "technologies": ["Git", "Github"],
-          "date": "2025"
-        },
-        {
-          "name": "React Course",
-          "photo": "Certif2.png",
-          "platform": "Meta",
-          "owner": "Meta",
-          "technologies": ["React", "JavaScript"],
-          "date": "2025"
-        },
-        {
-          "name": "Introduction to Docker",
-          "photo": "Certif3.png",
-          "platform": "KodeCloud",
-          "owner": "KodeCloud",
-          "technologies": ["Docker", "Containers"],
-          "date": "2025"
-        }
-      ]
-    },
-    "Resume": "Resume",
-    "Available for work": "Available for work",
-    "Let's build something": "Let's build something",
-    "incredible together!": "incredible together!",
-    "2025 Abderrahmane Lartab. All rights reserved": "2025 Abderrahmane Lartab. All rights reserved",
-    "Let's start a project together": "Let's start a project together",
-    "Name": "Name",
-    "Email": "Email",
-    "Message": "Message",
-    "Text Message...": "Text Message...",
-    "Send Message": "Send Message",
-    "Copyright 2025 · Made by": "Copyright 2025 · Made by Abderrahmane Lartab",
-    "Coming Soon": "Coming Soon",
-    "Something new is coming — stay tuned.": "Something new is coming — stay tuned.",
-    "Job Platform Connecting Candidates & Employers": "Job Platform Connecting Candidates & Employers",
-    "mihna_description_1": "Before Mihna, job seekers and employers often faced fragmented recruitment processes — candidates struggled to find relevant opportunities, while recruiters had difficulty managing and tracking applications effectively. Communication gaps and a lack of intelligent tools made hiring slow and inefficient.",
-    "mihna_description_2": "Mihna is a full-stack web platform that bridges this gap by connecting candidates and employers through an intelligent, streamlined system. It offers automated application tracking, real-time notifications, and an integrated chatbot assistant — helping both sides save time, stay organized, and make smarter career decisions.",
-    "The Challenge": "The Challenge",
-    "mihna_challenge": "How can we create a seamless job-matching experience while keeping the platform simple and efficient for both candidates and companies? We aimed not just to replicate existing job portals, but to go beyond — offering smart recommendations, streamlined applications, and real-time interaction between talent and employers.",
-    "Platform Features & Functionalities": "Platform Features & Functionalities",
-    "Candidate Features & Functionalities": "Candidate Features & Functionalities",
-    "Applying For a Job": "Applying For a Job",
-    "Company Features & Functionalities": "Company Features & Functionalities",
-    "View On LinkedIn": "View On LinkedIn",
-    "Explore More Work": "Explore More Work",
-    "Authentication Page": "Authentication Page",
-    "Company dashboard": "Company dashboard",
-    "Company Profile Page": "Company Profile Page",
-    "Analysis Page": "Analysis Page",
-    "Job Applications Page Groups by Job": "Job Applications Page Groups by Job",
-    "Adding a job offer": "Adding a job offer",
-    "Confirmation of data for adding a job offer": "Confirmation of data for adding a job offer",
-    "Form to edit the job": "Form to edit the job",
-    "Home Page": "Home Page",
-    "Profile Page": "Profile Page",
-    "Job Offers Page": "Job Offers Page",
-    "Mihna Chatbot": "Mihna Chatbot",
-    "Job Offer Details Page": "Job Offer Details Page",
-    "Statistics and testimonials sections": "Statistics and testimonials sections",
-    "Top Companies and Popular Jobs sections": "Top Companies and Popular Jobs sections"
+  "Home": "Home",
+  "About": "About",
+  "Skills": "Skills",
+  "Projects": "Projects",
+  "Education & Experience": "Education & Experience",
+  "Contact Me": "Contact Me",
+  "Full Stack Developer": "Full Stack & AI Developer",
+  "AI & Full Stack Developer": "Full Stack & AI Developer",
+  "Full Stack & AI Developer": "Full Stack & AI Developer",
+  "AI • Machine Learning • Full Stack": "AI • Machine Learning • Full Stack",
+  "hero_roles": [
+    "Full Stack & AI Developer",
+    "Machine Learning & Computer Vision",
+    "Data Engineering & Cloud"
+  ],
+  "bio": "Hi, I'm Abderrahmane Lartab, a Full Stack & AI Developer from Casablanca, Morocco. Currently in the AI Developer Program at YouCode, I build intelligent software combining React, Next.js, TypeScript, Laravel, and FastAPI with Machine Learning, Deep Learning, and Azure Cloud.",
+  "Contact": "Contact",
+  "Scroll Down": "Scroll Down",
+  "About Me": "About Me",
+  "AI & ML Developer": "AI & ML Developer",
+  "Web Developer": "Full Stack Developer",
+  "IT Support Specialist": "Data & Cloud",
+  "about_paragraph_1": "I'm Abderrahmane Lartab, a Full Stack & AI Developer from Casablanca, Morocco. Currently advancing my training in the AI Developer Program at YouCode (2026–2027) after completing Full Stack Web Development at OFPPT – ISAG Lalla Aicha (2024–2026) and interning at BRT Solutions on a School Management SaaS platform, I build modern web applications with React.js, Next.js, TypeScript, Laravel, Node.js, and FastAPI.",
+  "about_paragraph_2": "On the AI and data side, I work with Python, Scikit-learn, TensorFlow, Keras, PyTorch, and YOLOv8 for machine learning, deep learning, and computer vision — alongside Azure Data Factory, ADLS Gen2, Azure Machine Learning, PySpark, Apache Airflow, MLflow, and Docker. My long-term goal is to build intelligent software products that seamlessly unite modern web engineering, AI models, LLMs, and cloud infrastructure.",
+  "about_pillar_ai_title": "AI & Machine Learning",
+  "about_pillar_ai_desc": "Python, Scikit-learn, TensorFlow, Keras, PyTorch, YOLOv8, Computer Vision & LLMs.",
+  "about_pillar_fs_title": "Full Stack Development",
+  "about_pillar_fs_desc": "React.js, Next.js, TypeScript, PHP, Laravel, Node.js, FastAPI & REST APIs.",
+  "about_pillar_data_title": "Data Engineering & Cloud",
+  "about_pillar_data_desc": "Azure Data Factory, ADLS Gen2, Azure ML, PySpark, Apache Airflow, MLflow & Docker.",
+  "about_highlight_youcode": "AI Developer Program · 2026–2027",
+  "about_highlight_ofppt": "Full Stack Web Dev · 2024–2026",
+  "about_highlight_brt": "Full Stack SaaS Intern · 2026",
+  "Skills & Technologies": "Skills & Technologies",
+  "AI & ML": "AI & ML",
+  "Machine Learning": "Machine Learning",
+  "Deep Learning": "Deep Learning",
+  "LLMs & Prompting": "LLMs & Prompting",
+  "AI Integrations": "AI Integrations",
+  "Frontend": "Frontend",
+  "Backend": "Backend",
+  "Databases": "Databases",
+  "Technologies": "Technologies",
+  "Data & Cloud": "Data & Cloud",
+  "Tools & Linux": "Tools & Linux",
+  "Recent projects": "Recent projects",
+  "Tech stack": "Tech stack",
+  "Availability": "Availability",
+  "Contact info": "Contact info",
+  "Ask AI anything about Abderrahmane...": "Ask AI anything about Abderrahmane...",
+  "Abderrahmane AI Assistant": "Abderrahmane AI Assistant",
+  "View conversation": "View conversation",
+  "Clear conversation": "Clear conversation",
+  "Minimize chat": "Minimize chat",
+  "Send message": "Send message",
+  "ai_prompt_projects": "Tell me about Abderrahmane's recent projects.",
+  "ai_prompt_stack": "What is Abderrahmane's AI and Full Stack tech stack?",
+  "ai_prompt_availability": "Is Abderrahmane available for work or internships, and what are his career goals?",
+  "ai_prompt_contact": "How can I contact Abderrahmane Lartab?",
+  "Voice Introduction": "Voice Introduction",
+  "Play voice introduction": "Play voice introduction",
+  "Pause voice introduction": "Pause voice introduction",
+  "Replay": "Replay",
+  "Toggle transcript": "Toggle transcript",
+  "Each project is a unique piece of development": "Each project is a unique piece of development",
+  "Open Project": "Open Project",
+  "mihna_description": "A full-stack job platform that connects candidates and companies through modern listings, application tracking, real-time notifications, and AI-assisted support.",
+  "okad_description": "A responsive and SEO-friendly school platform that highlights the institution’s values, activities, and events through a clean and dynamic experience.",
+  "youchef_description": "A collaborative recipe platform where users can share, discover, and save culinary ideas through an engaging and responsive interface.",
+  "foody_description": "A stylish restaurant website designed to showcase the menu and brand with a smooth, modern, and user-friendly experience.",
+  "parksmart_description": "An intelligent parking management system that helps drivers find available spots in real time while giving operators better control over daily operations.",
+  "pipeline_description": "A CRM-style pipeline management platform built to simplify sales workflows, track leads, and improve customer relationship management.",
+  "technews_description": "A modern technology news platform delivering real-time updates, organized categories, and a polished reading experience across devices.",
+  "somadix_description": "SOMADIX is a company specialized in diverse business and construction works, founded by a field professional with long-standing market experience. It handles studies and execution of one-off or separate projects with rigor, efficiency, and a strong commitment to client satisfaction.",
+  "technews_title": "TechNews - Technology News Platform",
+  "Technologies Used": "Technologies Used",
+  "Key Features": "Key Features",
+  "Real-time news updates from multiple sources": "Real-time news updates from multiple sources",
+  "Categorized technology articles": "Categorized technology articles",
+  "Responsive design for all devices": "Responsive design for all devices",
+  "Search and filter functionality": "Search and filter functionality",
+  "Bookmark and save articles": "Bookmark and save articles",
+  "Education": "Education",
+  "Experience": "Experience",
+  "education": {
+    "items": [
+      {
+        "title": "AI Developer Program",
+        "institution": "YouCode",
+        "location": "Morocco",
+        "period": "2026 – 2027 (Currently studying)",
+        "description": "Hands-on training focused on data preparation, machine learning, deep learning, intelligent APIs, external AI services, and MLOps."
+      },
+      {
+        "title": "Full Stack Web Development",
+        "institution": "OFPPT – ISAG Lalla Aicha",
+        "location": "Casablanca, Morocco",
+        "period": "2024 – 2026",
+        "description": "Training in frontend development, backend development, databases, APIs, and software engineering."
+      },
+      {
+        "title": "High School Diploma (Physical Sciences)",
+        "institution": "Lycée Homan El Fatwaki",
+        "location": "Casablanca, Morocco",
+        "period": "2024"
+      }
+    ]
+  },
+  "experience": {
+    "items": [
+      {
+        "title": "Full Stack Developer Intern",
+        "institution": "BRT Solutions",
+        "period": "March 2026 – April 2026",
+        "description": "Worked on a school management SaaS application. Contributed to frontend development and features related to students, classes, payments, administration, and SMS.\\nCollaborated on improving user experience."
+      },
+      {
+        "title": "Participation in 2024 Hackathon",
+        "institution": "OFPPT - ISGI",
+        "period": "05/2024",
+        "description": "Created a smart parking platform during the hackathon.\\nReward: 6th prize"
+      }
+    ]
+  },
+  "Certificates": "Certificates",
+  "Open": "Preview",
+  "Verify": "Verify",
+  "Additional Certifications": "Additional Certifications",
+  "certificates": {
+    "items": [
+      {
+        "name": "Google AI Essentials",
+        "photo": "Certif4.png",
+        "platform": "Google · Coursera (5 Courses)",
+        "owner": "Google",
+        "link": "https://coursera.org/verify/specialization/16025RB490YA",
+        "technologies": [
+          "AI Essentials",
+          "Prompting"
+        ],
+        "date": "2026"
+      },
+      {
+        "name": "Meta React Basics",
+        "photo": "Certif2.png",
+        "platform": "Meta · Coursera",
+        "owner": "Meta",
+        "link": "https://coursera.org/verify/YQIBW9NGSFFX",
+        "technologies": [
+          "React.js",
+          "JavaScript"
+        ],
+        "date": "2025"
+      },
+      {
+        "name": "The Git & GitHub Bootcamp",
+        "photo": "Certif1.png",
+        "platform": "Udemy",
+        "owner": "Udemy",
+        "link": "https://ude.my/UC-96a93d90-5629-464f-8796-ee94fa980db5",
+        "technologies": [
+          "Git",
+          "GitHub"
+        ],
+        "date": "2025"
+      },
+      {
+        "name": "Docker For Absolute Beginners",
+        "photo": "Certif3.png",
+        "platform": "KodeKloud",
+        "owner": "KodeKloud",
+        "technologies": [
+          "Docker",
+          "Containers"
+        ],
+        "date": "2025"
+      }
+    ],
+    "additional": [
+      {
+        "name": "MySQL Database Structures",
+        "issuer": "Meta"
+      },
+      {
+        "name": "Web Development Fundamentals Camp",
+        "issuer": "Boolean"
+      },
+      {
+        "name": "Soft Skills Training",
+        "issuer": "IBM"
+      }
+    ]
+  },
+  "Full Stack Web": "Full Stack Web",
+  "Deep Learning & CV": "Deep Learning & CV",
+  "Data Engineering & ML": "Data Engineering & ML",
+  "Other Projects": "Other Projects",
+  "braintumor_description": "A deep learning and computer vision project for brain tumor classification and detection using MRI images across Glioma, Meningioma, No Tumor, and Pituitary classes — built with TensorFlow, Keras, GoogLeNet, YOLOv8, MLflow, FastAPI, and Streamlit.",
+  "dataco_description": "An end-to-end Azure data engineering and machine learning project focused on consumption forecasting using Azure Data Factory, Azure Data Lake Storage Gen2, Azure Compute, and Azure Machine Learning.",
+  "churn_description": "A machine learning project predicting customer churn using Python, Pandas, NumPy, and Scikit-learn — including exploratory data analysis (EDA), data preprocessing, KNN classification, and model evaluation.",
+  "Available for work": "Available for work",
+  "Let's build something": "Let's build something",
+  "incredible together!": "incredible together!",
+  "2025 Abderrahmane Lartab. All rights reserved": "2025 Abderrahmane Lartab. All rights reserved",
+  "Let's start a project together": "Let's start a project together",
+  "Name": "Name",
+  "Email": "Email",
+  "Message": "Message",
+  "Text Message...": "Text Message...",
+  "Send Message": "Send Message",
+  "Copyright 2025 · Made by": "Copyright 2025 · Made by Abderrahmane Lartab",
+  "Coming Soon": "Coming Soon",
+  "Something new is coming — stay tuned.": "Something new is coming — stay tuned.",
+  "Job Platform Connecting Candidates & Employers": "Job Platform Connecting Candidates & Employers",
+  "mihna_description_1": "Before Mihna, job seekers and employers often faced fragmented recruitment processes — candidates struggled to find relevant opportunities, while recruiters had difficulty managing and tracking applications effectively. Communication gaps and a lack of intelligent tools made hiring slow and inefficient.",
+  "mihna_description_2": "Mihna is a full-stack web platform that bridges this gap by connecting candidates and employers through an intelligent, streamlined system. It offers automated application tracking, real-time notifications, and an integrated chatbot assistant — helping both sides save time, stay organized, and make smarter career decisions.",
+  "The Challenge": "The Challenge",
+  "mihna_challenge": "How can we create a seamless job-matching experience while keeping the platform simple and efficient for both candidates and companies? We aimed not just to replicate existing job portals, but to go beyond — offering smart recommendations, streamlined applications, and real-time interaction between talent and employers.",
+  "Platform Features & Functionalities": "Platform Features & Functionalities",
+  "Candidate Features & Functionalities": "Candidate Features & Functionalities",
+  "Applying For a Job": "Applying For a Job",
+  "Company Features & Functionalities": "Company Features & Functionalities",
+  "View On LinkedIn": "View On LinkedIn",
+  "Explore More Work": "Explore More Work",
+  "Authentication Page": "Authentication Page",
+  "Company dashboard": "Company dashboard",
+  "Company Profile Page": "Company Profile Page",
+  "Analysis Page": "Analysis Page",
+  "Job Applications Page Groups by Job": "Job Applications Page Groups by Job",
+  "Adding a job offer": "Adding a job offer",
+  "Confirmation of data for adding a job offer": "Confirmation of data for adding a job offer",
+  "Form to edit the job": "Form to edit the job",
+  "Home Page": "Home Page",
+  "Profile Page": "Profile Page",
+  "Job Offers Page": "Job Offers Page",
+  "Mihna Chatbot": "Mihna Chatbot",
+  "Job Offer Details Page": "Job Offer Details Page",
+  "Statistics and testimonials sections": "Statistics and testimonials sections",
+  "Top Companies and Popular Jobs sections": "Top Companies and Popular Jobs sections",
+  "All": "All",
+  "Previous": "Prev",
+  "Next": "Next",
+  "digitech_description": "A full-stack electronics e-commerce platform featuring product catalog browsing, user authentication, shopping cart, and order management — powered by React.js and a Laravel REST API."
 }

@@ -83,7 +83,7 @@ body {
 
 .hero-img {
   @apply relative justify-self-center
-      bg-[url('/photos/Me.png')] bg-cover bg-no-repeat bg-center
+      bg-[url('/photos/abc.png')] bg-cover bg-no-repeat bg-[center_18%]
       transition-all duration-1000 hover:scale-[1.06] shadow-[var(--custom-shadow)];
 
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
@@ -186,7 +186,7 @@ body {
   --bg-skills: #575555;
   --bg-skills-2: #615e5e;
   --bg-projects: #333232;
-  --bg-nav: #a7a7a796;
+  --bg-nav: rgba(28, 28, 33, 0.88);
   --soft-gray: #cbcbcb;
   --soft-gray-2: #575555;
   --text-dark: #ebe7e7;
@@ -299,4 +299,34 @@ body {
 
 .ButtonHover {
   @apply transition duration-300 ease-in-out hover:scale-105;
+}
+
+.ai-gradient-text {
+  background: linear-gradient(120deg, #0c5a84 0%, #0284c7 48%, #4f46e5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dark .ai-gradient-text {
+  background: linear-gradient(120deg, #7dd3fc 0%, #38bdf8 50%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes pulseSlow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.78;
+    transform: scale(1.04);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 6s ease-in-out infinite;
 }

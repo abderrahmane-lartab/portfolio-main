@@ -25,7 +25,11 @@ const WeatherDisplay = () => {
     return () => clearInterval(interval);
   }, []);
 
-  return <p className="text-xl text-white">{temperature}°</p>;
+  return (
+    <p className="text-lg sm:text-xl font-semibold text-white">
+      {temperature !== null ? `${temperature}°C` : "--°C"}
+    </p>
+  );
 };
 
 export default WeatherDisplay;

@@ -93,8 +93,8 @@ export const Experience = () => {
           initialOpacity={0}
         >
           <div
-            className={`p-4 rounded-lg shadow-sm flex flex-col gap-1 border-l-[5px] border-l-green-600 ${
-              theme === "light" ? "bg-gray-100" : "bg-[#575555]"
+            className={`p-4 rounded-lg shadow-sm flex flex-col gap-1 border-l-[5px] border-l-[#0c5a84] dark:border-l-sky-400 ${
+              theme === "light" ? "bg-gray-100" : "bg-[#2c2c30]"
             }`}
           >
             <h3
@@ -153,8 +153,8 @@ export const Experience = () => {
         }`}
       >
         <div
-          className={`p-4 rounded-lg shadow-sm flex flex-col gap-1 border-l-[5px] border-l-green-600 ${
-            theme === "light" ? "bg-gray-100" : "bg-[#575555]"
+          className={`p-4 rounded-lg shadow-sm flex flex-col gap-1 border-l-[5px] border-l-[#0c5a84] dark:border-l-sky-400 ${
+            theme === "light" ? "bg-gray-100" : "bg-[#2c2c30]"
           }`}
         >
           <h3
@@ -237,7 +237,7 @@ export const Experience = () => {
                 onClick={() => setActiveTab(key)}
                 className={`flex items-center gap-3 pb-2 transition-all duration-300 cursor-pointer ${
                   isActive
-                    ? "text-green-600 font-semibold"
+                    ? "text-[#0c5a84] dark:text-sky-400 font-semibold"
                     : "text-[var(--icons-color)] hover:text-[var(--text-dark)]"
                 }`}
               >
@@ -253,7 +253,7 @@ export const Experience = () => {
 
           {/* Dynamic underline */}
           <span
-            className="absolute bottom-0 h-[3px] bg-green-600 rounded-full transition-all duration-500 ease-in-out"
+            className="absolute bottom-0 h-[3px] bg-gradient-to-r from-[#0c5a84] via-sky-500 to-indigo-500 rounded-full transition-all duration-500 ease-in-out"
             style={underlineStyle}
           />
         </div>

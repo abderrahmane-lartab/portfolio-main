@@ -26,7 +26,7 @@ export const Available = () => {
   const { theme } = useTheme();
 
   return (
-    <section className="flexy flex-col gap-6 pb-20">
+    <section className="pt-20 max-sm:pt-14 flexy flex-col gap-6 pb-20">
       <AnimatedContent
         distance={20}
         direction="vertical"
@@ -111,7 +111,12 @@ export const Available = () => {
             <p>{t("Contact Me")}</p>
           </TooltipContent>
         </Tooltip>
-        <SheetContent side="bottom">
+        <SheetContent
+          side="bottom"
+          title={t("Contact")}
+          closeClassName="absolute! right-5 top-5 left-auto! p-2 rounded-xl bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/15 opacity-90"
+          className="w-full max-w-[1020px] mx-auto max-h-[92vh] h-auto rounded-t-3xl border-x border-t border-black/10 dark:border-white/10 shadow-2xl px-5 sm:px-10 py-6 sm:py-7"
+        >
           <Contact />
         </SheetContent>
       </Sheet>

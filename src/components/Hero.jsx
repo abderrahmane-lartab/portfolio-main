@@ -1,4 +1,3 @@
-import { MoveDown } from "lucide-react";
 import React from "react";
 import { Contact } from "./Contact";
 import {
@@ -18,22 +17,33 @@ import TextType from "./flowBits/TextType";
 import AnimatedContent from "./flowBits/AnimatedContent";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import { AIChatAssistant } from "./AIChatAssistant";
 
 export const Hero = () => {
   const { t, i18n } = useTranslation();
   const { theme } = useTheme();
 
+  const translatedRoles = t("hero_roles", { returnObjects: true });
+  const roleList =
+    Array.isArray(translatedRoles) && translatedRoles.length > 0
+      ? translatedRoles
+      : [
+          t("AI & Full Stack Developer"),
+          "Machine Learning & LLM Builder",
+          "Python & React Engineer",
+        ];
+
   return (
     <div
       id="home"
-      className="flexy max-[900px]:justify-start! max-[900px]:mt-10 flex-col h-[100vh] max-[900px]:h-auto"
+      className="flexy justify-between! max-[900px]:justify-start! max-[900px]:mt-8 flex-col min-h-[calc(100vh-64px)] max-[900px]:min-h-0 pt-10 max-[900px]:pt-4 pb-6 gap-8 max-[900px]:gap-8"
     >
-      <div className="w-[80%] max-lg:w-[85%] grid grid-cols-[1.5fr_1fr] max-[900px]:grid-cols-1 pb-15 max-sm:pb-8 gap-20 max-[900px]:gap-5">
+      <div className="w-[80%] max-lg:w-[85%] my-auto grid grid-cols-[1.5fr_1fr] max-[900px]:grid-cols-1 items-center gap-16 max-[900px]:gap-6">
         <div className="text-[var(--text-dark)] max-[900px]:order-2 max-[900px]:text-center">
           <SplitText
             text="Abderrahmane Lartab"
             tag="h1"
-            className="text-[40px] max-sm:text-3xl max-[370px]:text-2xl! max-lg:text-3xl font-bold leading-14 max-lg:leading-10 max-[900px]:leading-8 text-[var(--text-dark)]! max-[900px]:hidden"
+            className="text-[42px] max-sm:text-3xl max-[370px]:text-2xl! max-lg:text-3xl font-bold leading-14 max-lg:leading-10 max-[900px]:leading-8 text-[var(--text-dark)]! max-[900px]:hidden"
             delay={50}
             duration={0.4}
             ease="power3.out"
@@ -45,13 +55,15 @@ export const Hero = () => {
           />
           <br />
           <TextType
-            text={t("Full Stack Developer")}
+            key={`desktop-${i18n.language}`}
+            text={roleList}
             className="text-2xl max-sm:text-xl max-[370px]:text-lg! max-lg:text-2xl font-semibold max-[900px]:hidden block"
-            typingSpeed={90}
-            deletingSpeed={60}
-            pauseDuration={3000}
+            cursorClassName="text-[#0c5a84] dark:text-sky-400"
+            typingSpeed={75}
+            deletingSpeed={45}
+            pauseDuration={2600}
             showCursor={true}
-            loop="true"
+            loop={true}
             cursorCharacter="|"
           />
           <FadeContent
@@ -141,62 +153,15 @@ export const Hero = () => {
                     </svg>
                     <p className="font-bold text-sm mt-0.5">{t("Contact")}</p>
                   </SheetTrigger>
-                  <SheetContent side="bottom" className="w-full h-[100vh]">
-                    <SheetHeader>
-                      <SheetTitle></SheetTitle>
-                      <SheetDescription></SheetDescription>
-                    </SheetHeader>
+                  <SheetContent
+                    side="bottom"
+                    title={t("Contact")}
+                    closeClassName="absolute! right-5 top-5 left-auto! p-2 rounded-xl bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/15 opacity-90"
+                    className="w-full max-w-[1020px] mx-auto max-h-[92vh] h-auto rounded-t-3xl border-x border-t border-black/10 dark:border-white/10 shadow-2xl px-5 sm:px-10 py-6 sm:py-7"
+                  >
                     <Contact />
-                    <SheetFooter></SheetFooter>
                   </SheetContent>
                 </Sheet>
-              </AnimatedContent>
-              <AnimatedContent
-                distance={30}
-                direction="vertical"
-                reverse={false}
-                duration={0.8}
-                ease="easeOut"
-                initialOpacity={0}
-                animateOpacity
-                scale={1}
-                threshold={0.2}
-                delay={0.6}
-              >
-                <a
-                  href={`/docs/${i18n.language}_CV.pdf`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flexy font-bold text-sm gap-2 py-2 rounded-full px-4 shadow-md ButtonHover click-sound ${
-                    theme === "light" ? "bg-[#d9e2e9]" : "bg-[#434141]"
-                  }`}
-                >
-                  <svg
-                    className="size-4.5"
-                    fill="var(--text-dark)"
-                    version="1.1"
-                    id="Capa_1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    viewBox="0 0 43.916 43.916"
-                    xmlSpace="preserve"
-                  >
-                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                    <g
-                      id="SVGRepo_tracerCarrier"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    ></g>
-                    <g id="SVGRepo_iconCarrier">
-                      {" "}
-                      <g>
-                        {" "}
-                        <path d="M34.395,0H9.522c-2.762,0-5,2.239-5,5v33.916c0,2.761,2.238,5,5,5h24.871c2.762,0,5-2.239,5-5V5 C39.395,2.239,37.154,0,34.395,0z M9.208,16.855c0-1.172,0.951-2.121,2.121-2.121h0.742c-0.791-0.874-1.277-2.03-1.277-3.304 c0-2.723,2.209-4.931,4.932-4.931c2.725,0,4.932,2.207,4.932,4.932c0,1.272-0.486,2.429-1.279,3.303h0.709 c1.172,0,2.121,0.949,2.121,2.121v3.578c0,1.122-0.875,2.03-1.975,2.106h-9.051c-1.1-0.076-1.975-0.984-1.975-2.106V16.855 L9.208,16.855z M32.708,37.416h-21.5c-1.104,0-2-0.896-2-2s0.896-2,2-2h21.5c1.104,0,2,0.896,2,2S33.812,37.416,32.708,37.416z M32.708,29.916h-21.5c-1.104,0-2-0.896-2-2s0.896-2,2-2h21.5c1.104,0,2,0.896,2,2S33.812,29.916,32.708,29.916z M32.708,22.416 h-6.5c-1.104,0-2-0.896-2-2c0-1.104,0.896-2,2-2h6.5c1.104,0,2,0.896,2,2C34.708,21.52,33.812,22.416,32.708,22.416z"></path>{" "}
-                      </g>{" "}
-                    </g>
-                  </svg>
-                  <p className="mt-0.5 max-sm:text-xs">{t("View CV")}</p>
-                </a>
               </AnimatedContent>
             </div>
             <div className="flexy gap-3 ml-2">
@@ -274,7 +239,11 @@ export const Hero = () => {
                   delay={250}
                   initialOpacity={0}
                 >
-                  <a href="https://github.com/Abderrahmane-lrt">
+                  <a
+                    href="https://github.com/abderrahmane-lartab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <svg
                       fill="var(--icons-color)"
                       viewBox="-2.5 0 19 19"
@@ -313,13 +282,15 @@ export const Hero = () => {
             rootMargin="-100px"
           />
           <TextType
-            text={t("Full Stack Developer")}
+            key={`mobile-${i18n.language}`}
+            text={roleList}
             className="text-2xl max-sm:text-xl max-[370px]:text-lg! max-lg:text-2xl font-semibold"
-            typingSpeed={90}
-            deletingSpeed={60}
-            pauseDuration={3000}
+            cursorClassName="text-[#0c5a84] dark:text-sky-400"
+            typingSpeed={75}
+            deletingSpeed={45}
+            pauseDuration={2600}
             showCursor={true}
-            loop="true"
+            loop={true}
             cursorCharacter="|"
           />
         </span>
@@ -327,12 +298,12 @@ export const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="relative"
+          className="relative flex items-center justify-center"
         >
-          <div className="absolute inset-0 z-10">
-            {/* Bubbles */}
+          <div className="absolute inset-0 z-10 pointer-events-none">
+            {/* Subtle AI-inspired floating particles */}
             <motion.div
-              className="absolute -top-4 max-sm:top-2 -right-4 max-sm:right-2 w-3 h-3 rounded-full bg-gradient-to-br from-gray-500/40 to-gray-300/30 backdrop-blur-sm"
+              className="absolute -top-4 max-sm:top-2 -right-4 max-sm:right-2 w-3 h-3 rounded-full bg-gradient-to-br from-sky-400/55 to-indigo-400/40 backdrop-blur-sm"
               animate={{
                 y: [0, -10, 0],
                 x: [0, 5, 0],
@@ -345,7 +316,7 @@ export const Hero = () => {
               }}
             />
             <motion.div
-              className="absolute -top-8 max-sm:-top-6 right-8 max-sm:right-8 w-2 h-2 rounded-full bg-gradient-to-br from-gray-500/30 to-gray-300/20 backdrop-blur-sm"
+              className="absolute -top-8 max-sm:-top-6 right-8 max-sm:right-8 w-2 h-2 rounded-full bg-gradient-to-br from-cyan-400/50 to-sky-300/30 backdrop-blur-sm"
               animate={{
                 y: [0, -8, 0],
                 x: [0, -3, 0],
@@ -359,7 +330,7 @@ export const Hero = () => {
               }}
             />
             <motion.div
-              className="absolute -bottom-6 max-sm:bottom-10 -left-4 max-sm:left-4 w-3 h-3 rounded-full bg-gradient-to-br from-gray-500/35 to-gray-300/25 backdrop-blur-sm"
+              className="absolute -bottom-6 max-sm:bottom-10 -left-4 max-sm:left-4 w-3 h-3 rounded-full bg-gradient-to-br from-indigo-400/45 to-sky-300/35 backdrop-blur-sm"
               animate={{
                 y: [0, 12, 0],
                 x: [0, -4, 0],
@@ -373,7 +344,7 @@ export const Hero = () => {
               }}
             />
             <motion.div
-              className="absolute -bottom-10 max-sm:bottom-0 left-4 max-sm:left-8 w-3 h-3 rounded-full bg-gradient-to-br from-gray-500/25 to-gray-300/15 backdrop-blur-sm"
+              className="absolute -bottom-10 max-sm:bottom-0 left-4 max-sm:left-8 w-2.5 h-2.5 rounded-full bg-gradient-to-br from-sky-400/40 to-cyan-300/25 backdrop-blur-sm"
               animate={{
                 y: [0, 8, 0],
                 x: [0, 2, 0],
@@ -387,7 +358,7 @@ export const Hero = () => {
               }}
             />
             <motion.div
-              className="absolute bottom-1/4 max-sm:bottom-10 -right-0 max-sm:right-8 w-2 h-2 rounded-full bg-gradient-to-br from-gray-500/40 to-gray-300/30 backdrop-blur-sm"
+              className="absolute bottom-1/4 max-sm:bottom-10 -right-0 max-sm:right-8 w-2 h-2 rounded-full bg-gradient-to-br from-sky-500/45 to-indigo-400/30 backdrop-blur-sm"
               animate={{
                 y: [0, -6, 0, 6, 0],
                 x: [0, 4, 0, -4, 0],
@@ -400,7 +371,7 @@ export const Hero = () => {
               }}
             />
             <motion.div
-              className="absolute top-1/3 max-sm:top-10 -left-0 max-sm:left-8 w-2 h-2 rounded-full bg-gradient-to-br from-gray-500/30 to-gray-300/20 backdrop-blur-sm"
+              className="absolute top-1/3 max-sm:top-10 -left-0 max-sm:left-8 w-2 h-2 rounded-full bg-gradient-to-br from-cyan-400/40 to-indigo-300/30 backdrop-blur-sm"
               animate={{
                 y: [0, 8, 0, -8, 0],
                 x: [0, -3, 0, 3, 0],
@@ -414,50 +385,46 @@ export const Hero = () => {
             />
           </div>
 
-          {/* Background blobs */}
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-500/20 via-gray-500/10 to-transparent rounded-full blur-2xl animate-pulse-slow" />
-          <div className="absolute inset-0 bg-gradient-to-tl from-gray-500/20 via-gray-500/10 to-transparent rounded-full blur-2xl animate-pulse-slow animation-delay-500" />
+          {/* Subtle AI ambient aura behind portrait */}
+          <div className="absolute -inset-4 bg-gradient-to-br from-sky-400/20 via-cyan-300/10 to-indigo-500/20 rounded-3xl blur-2xl animate-pulse-slow" />
+          <div className="absolute -inset-2 bg-gradient-to-tl from-[#0c5a84]/15 via-sky-300/10 to-transparent rounded-3xl blur-xl animate-pulse-slow" />
 
-          {/* Main image container */}
-          <div className="relative w-full h-full rounded-full z-20">
-            <div className="relative hero-img group h-72 max-[450px]:h-50! max-[900px]:h-55 max-lg:h-65 w-80 max-[900px]:w-60 max-[450px]:w-55! max-lg:w-70 max-[900px]:order-1 rounded-full overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <p className="text-white text-lg font-bold text-center select-none">
-                  FullStack Developer
-                </p>
-              </div>
+          {/* Main full-frame square portrait container (shows entire image without side clipping) */}
+          <div className="relative z-20 rounded-3xl p-1.5 backdrop-blur-md bg-white/65 dark:bg-white/10 border border-white/80 dark:border-white/15 shadow-[0_14px_40px_rgba(12,90,132,0.14)]">
+            <div className="relative w-78 max-lg:w-70 max-[900px]:w-64 max-[450px]:w-56! aspect-square rounded-[20px] overflow-hidden shadow-[var(--custom-shadow)]">
+              <img
+                src="/photos/abc.png"
+                alt="Abderrahmane Lartab"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
           </div>
 
-          {/* Optional decorative blobs */}
-          <div className="absolute -top-8 right-4 w-12 h-12 bg-gray-300 rounded-full blur-lg animate-pulse-slow" />
-          <div className="absolute -bottom-6 left-4 w-12 h-12 bg-gray-300 rounded-full blur-lg animate-pulse-slow animation-delay-500" />
+          {/* Subtle corner ambient orbs */}
+          <div className="absolute -top-6 right-4 w-12 h-12 bg-sky-300/30 dark:bg-sky-400/20 rounded-full blur-lg animate-pulse-slow" />
+          <div className="absolute -bottom-6 left-4 w-12 h-12 bg-indigo-300/30 dark:bg-indigo-400/20 rounded-full blur-lg animate-pulse-slow" />
         </motion.div>
       </div>
-      <div className="flexy">
+
+      {/* Preserved ChatGPT-style centered AI assistant input */}
+      <div className="w-full flex flex-col items-center gap-3 pb-2">
+        <AIChatAssistant />
         <Link
           to="about"
           smooth={true}
           duration={600}
           offset={-120}
-          className="cursor-pointer"
+          className="group cursor-pointer opacity-75 hover:opacity-100 transition-opacity mt-1"
+          aria-label={t("Scroll Down")}
         >
-          <span className="flexy flex-col gap-3 max-sm:gap-2 max-sm:text-sm">
-            <AnimatedContent
-              distance={30}
-              direction="vertical"
-              reverse={true}
-              duration={0.8}
-              ease="easeOut"
-              initialOpacity={0}
-              animateOpacity
-              scale={1}
-              threshold={0.2}
-              delay={0.2}
-            >
-              <h1>{t("Scroll Down")}</h1>
-            </AnimatedContent>
-            <MoveDown className="animate-[upDown_1.5s_ease-in-out_infinite] max-sm:size-5.5" />
+          <span className="flexy flex-col gap-1">
+            <span className="w-5 h-8 rounded-full border-[1.5px] border-[var(--icons-color)]/70 group-hover:border-[#0c5a84] dark:group-hover:border-sky-400 flex justify-center pt-1.5 transition-colors">
+              <motion.span
+                animate={{ y: [0, 8, 0], opacity: [1, 0.25, 1] }}
+                transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+                className="w-1 h-1.5 rounded-full bg-[var(--icons-color)] group-hover:bg-[#0c5a84] dark:group-hover:bg-sky-400"
+              />
+            </span>
           </span>
         </Link>
       </div>
