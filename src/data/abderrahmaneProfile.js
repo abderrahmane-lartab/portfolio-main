@@ -37,6 +37,7 @@ export const abderrahmaneProfile = {
   education: [
     {
       title: "YouCode – AI Developer Program",
+      location: "Safi, Morocco",
       period: "2026–2027",
       status: "Currently studying",
       details:
@@ -206,7 +207,7 @@ export const KNOWLEDGE_BASE_MARKDOWN = `# Personal Knowledge Base – Abderrahma
 
 ## Education
 ### YouCode – AI Developer Program
-2026–2027 | Currently studying.
+2026–2027 | Safi, Morocco | Currently studying.
 Hands-on training focused on data preparation, machine learning, deep learning, intelligent APIs, external AI services and MLOps.
 
 ### OFPPT – ISAG Lalla Aicha

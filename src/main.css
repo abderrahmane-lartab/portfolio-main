@@ -330,3 +330,8 @@ body {
 .animate-pulse-slow {
   animation: pulseSlow 6s ease-in-out infinite;
 }
+
+/* Keep Google reCAPTCHA challenge popup interactive when Contact is inside a Radix Sheet */
+body > div[style*="z-index: 2000000000"] {
+  pointer-events: auto !important;
+}

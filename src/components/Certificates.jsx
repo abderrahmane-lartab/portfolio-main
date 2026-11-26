@@ -3,7 +3,6 @@ import { createPortal } from "react-dom";
 import {
   Award,
   ExternalLink,
-  Maximize2,
   X,
   CheckCircle2,
 } from "lucide-react";
@@ -64,7 +63,7 @@ export const Certificates = () => {
             exit={{ opacity: 0, scale: 0.96, y: 8 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
             onClick={(e) => e.stopPropagation()}
-            className={`relative w-full max-w-3xl rounded-3xl overflow-hidden border shadow-2xl ${
+            className={`relative w-full max-w-3xl rounded-2xl overflow-hidden border shadow-2xl ${
               isLight
                 ? "bg-white border-slate-200 text-slate-900"
                 : "bg-[#1e1e22] border-white/12 text-slate-100"
@@ -168,7 +167,7 @@ export const Certificates = () => {
         </div>
       </div>
 
-      {/* Main 4-Card Responsive Grid (all visual certificates visible without hidden slides) */}
+      {/* Main 4-Card Responsive Grid (static document-frame cards, no hover animations) */}
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
         {certificates.map((cert, index) => (
           <motion.div
@@ -178,25 +177,25 @@ export const Certificates = () => {
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.3, delay: index * 0.06 }}
             onClick={() => setSelectedCert(cert)}
-            className={`group relative rounded-3xl p-4 border flex flex-col cursor-pointer select-none transition-all duration-250 hover:-translate-y-1 backdrop-blur-md shadow-[var(--custom-shadow)] ${
+            className={`relative rounded-[10px] p-3.5 border flex flex-col cursor-pointer select-none backdrop-blur-md shadow-[var(--custom-shadow)] ${
               isLight
-                ? "bg-white/85 hover:bg-white border-slate-200/85 hover:border-[#0c5a84]/35"
-                : "bg-[#222226]/90 hover:bg-[#27272c] border-white/10 hover:border-sky-400/35"
+                ? "bg-white/88 border-slate-200/85"
+                : "bg-[#222226]/90 border-white/10"
             }`}
           >
             {/* Certificate Thumbnail Frame */}
             <div
-              className={`relative aspect-[4/3] w-full rounded-2xl overflow-hidden border ${
+              className={`relative aspect-[4/3] w-full rounded-[6px] overflow-hidden border ${
                 isLight
-                  ? "bg-slate-100 border-slate-200/70"
+                  ? "bg-slate-100 border-slate-200/75"
                   : "bg-[#18181b] border-white/[0.08]"
               }`}
             >
               <span
-                className={`z-10 text-[11px] font-bold absolute top-2.5 left-2.5 rounded-full px-2.5 py-0.5 backdrop-blur-md border shadow-2xs ${
+                className={`z-10 text-[11px] font-bold absolute top-2 left-2 rounded-[5px] px-2 py-0.5 backdrop-blur-md border shadow-2xs ${
                   isLight
-                    ? "bg-white/90 text-slate-800 border-slate-200/80"
-                    : "bg-slate-900/80 text-white border-white/15"
+                    ? "bg-white/92 text-slate-800 border-slate-200/80"
+                    : "bg-slate-900/85 text-white border-white/15"
                 }`}
               >
                 {cert.owner}
@@ -206,16 +205,8 @@ export const Certificates = () => {
                 src={`/photos/certificates/${cert.photo}`}
                 alt={cert.name}
                 loading="lazy"
-                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                className="w-full h-full object-cover object-top"
               />
-
-              {/* Subtle Hover Preview Badge */}
-              <div className="absolute inset-0 bg-slate-950/35 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 text-slate-900 text-xs font-semibold shadow-md">
-                  <Maximize2 className="size-3.5" />
-                  <span>{t("Open", "Preview")}</span>
-                </span>
-              </div>
             </div>
 
             {/* Certificate Metadata */}
@@ -231,10 +222,8 @@ export const Certificates = () => {
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
                     title={t("Verify", "Verify")}
-                    className={`p-1.5 rounded-lg shrink-0 transition-colors ${
-                      isLight
-                        ? "text-slate-500 hover:text-[#0c5a84] hover:bg-slate-100"
-                        : "text-slate-400 hover:text-sky-300 hover:bg-white/10"
+                    className={`p-1.5 rounded-md shrink-0 ${
+                      isLight ? "text-slate-600" : "text-slate-300"
                     }`}
                   >
                     <ExternalLink className="size-4" />
@@ -257,7 +246,7 @@ export const Certificates = () => {
                     cert.technologies.map((tech, i) => (
                       <span
                         key={i}
-                        className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-lg border ${
+                        className={`text-[11px] font-semibold px-2 py-0.5 rounded-[5px] border ${
                           isLight
                             ? "bg-slate-50 text-slate-700 border-slate-200/80"
                             : "bg-white/[0.05] text-slate-200 border-white/10"
@@ -283,9 +272,9 @@ export const Certificates = () => {
       {/* Additional Verified Credentials Strip from Knowledge Base */}
       {additionalCerts.length > 0 && (
         <div
-          className={`mt-5 rounded-3xl border px-5 sm:px-6 py-4 backdrop-blur-md shadow-[var(--custom-shadow)] ${
+          className={`mt-5 rounded-xl border px-5 sm:px-6 py-4 backdrop-blur-md shadow-[var(--custom-shadow)] ${
             isLight
-              ? "bg-white/80 border-slate-200/85"
+              ? "bg-white/82 border-slate-200/85"
               : "bg-[#222226]/90 border-white/10"
           }`}
         >
@@ -301,7 +290,7 @@ export const Certificates = () => {
               {additionalCerts.map((item, idx) => (
                 <span
                   key={idx}
-                  className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-xl border ${
+                  className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md border ${
                     isLight
                       ? "bg-slate-50 text-slate-700 border-slate-200/85"
                       : "bg-white/[0.04] text-slate-200 border-white/[0.08]"

@@ -88,7 +88,7 @@
       {
         "title": "Programme AI Developer",
         "institution": "YouCode",
-        "location": "Maroc",
+        "location": "Safi, Maroc",
         "period": "2026 – 2027 (En cours)",
         "description": "Formation pratique axée sur la préparation des données, le machine learning, le deep learning, les APIs intelligentes, les services IA externes et le MLOps."
       },
@@ -241,5 +241,8 @@
   "All": "Tous",
   "Previous": "Préc.",
   "Next": "Suiv.",
-  "digitech_description": "Plateforme e-commerce full-stack spécialisée dans les produits high-tech, intégrant un catalogue produits dynamique, l'authentification utilisateur, le panier et la gestion des commandes — propulsée par React.js et une API REST Laravel."
+  "digitech_description": "Plateforme e-commerce full-stack spécialisée dans les produits high-tech, intégrant un catalogue produits dynamique, l'authentification utilisateur, le panier et la gestion des commandes — propulsée par React.js et une API REST Laravel.",
+  "Copy": "Copier",
+  "Copied!": "Copié !",
+  "contact_cta_subtitle": "Stage, opportunité CDI ou projet IA & Full Stack à concrétiser — ma boîte mail est ouverte."
 }

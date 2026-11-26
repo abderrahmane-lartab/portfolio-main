@@ -119,7 +119,7 @@ export const Skills = () => {
       {/* Modern Segmented Category Bar */}
       <div className="mt-8 flex justify-center">
         <div
-          className={`inline-flex items-center gap-1.5 overflow-x-auto max-w-full scrollbar-hidden p-1.5 rounded-2xl border backdrop-blur-md ${
+          className={`inline-flex items-center gap-1.5 overflow-x-auto max-w-full scrollbar-hidden p-1.5 rounded-xl border backdrop-blur-md ${
             isLight
               ? "bg-white/80 border-slate-200/85 shadow-xs"
               : "bg-[#222226]/90 border-white/10"
@@ -132,7 +132,7 @@ export const Skills = () => {
                 key={cat.key}
                 type="button"
                 onClick={() => setActiveTab(cat.key)}
-                className={`relative px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-colors duration-200 cursor-pointer select-none ${
+                className={`relative px-3.5 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition-colors duration-200 cursor-pointer select-none ${
                   isActive
                     ? "text-white dark:text-slate-950"
                     : isLight
@@ -144,7 +144,7 @@ export const Skills = () => {
                   <motion.span
                     layoutId="skills-active-pill"
                     transition={{ type: "spring", stiffness: 420, damping: 32 }}
-                    className="absolute inset-0 rounded-xl bg-[#0c5a84] dark:bg-sky-400 shadow-xs"
+                    className="absolute inset-0 rounded-lg bg-[#0c5a84] dark:bg-sky-400 shadow-xs"
                   />
                 )}
                 <span className="relative z-10 flex items-center gap-1.5">
@@ -167,11 +167,11 @@ export const Skills = () => {
         </div>
       </div>
 
-      {/* Skills Bento Grid Container */}
+      {/* Skills Grid Container */}
       <div
-        className={`mt-6 rounded-4xl border px-5 sm:px-8 py-6 sm:py-8 shadow-[var(--custom-shadow)] backdrop-blur-md ${
+        className={`mt-6 rounded-[18px] border px-5 sm:px-8 py-6 sm:py-8 shadow-[var(--custom-shadow)] backdrop-blur-md ${
           isLight
-            ? "bg-white/80 border-slate-200/85"
+            ? "bg-white/82 border-slate-200/85"
             : "bg-[#222226]/90 border-white/10"
         }`}
       >
@@ -190,15 +190,15 @@ export const Skills = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.22, delay: index * 0.03 }}
-                className={`group flex items-center gap-3.5 rounded-2xl p-3 sm:p-3.5 border transition-all duration-200 hover:-translate-y-0.5 ${
+                className={`flex items-center gap-3.5 rounded-[10px] p-3 sm:p-3.5 border ${
                   isLight
-                    ? "bg-slate-50/90 hover:bg-white border-slate-200/80 hover:border-[#0c5a84]/35 hover:shadow-sm"
-                    : "bg-white/[0.04] hover:bg-white/[0.07] border-white/[0.08] hover:border-sky-400/30"
+                    ? "bg-slate-50/90 border-slate-200/80"
+                    : "bg-white/[0.04] border-white/[0.08]"
                 }`}
               >
-                {/* Crisp Logo Tile (guarantees contrast for dark & light brand marks) */}
+                {/* Crisp Logo Tile */}
                 <div
-                  className={`size-11 sm:size-12 shrink-0 rounded-xl flex items-center justify-center p-2 transition-transform duration-200 group-hover:scale-105 ${
+                  className={`size-11 sm:size-12 shrink-0 rounded-[7px] flex items-center justify-center p-2 ${
                     isLight
                       ? "bg-white border border-slate-200/75 shadow-2xs"
                       : "bg-white/95 shadow-xs"

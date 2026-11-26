@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import {
-  ArrowUpRight,
   ChevronLeft,
   ChevronRight,
   ExternalLink,
@@ -288,7 +287,7 @@ export const Projects = () => {
             exit={{ opacity: 0, scale: 0.96, y: 8 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
             onClick={(e) => e.stopPropagation()}
-            className={`relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl border shadow-2xl ${
+            className={`relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl border shadow-2xl ${
               isLight
                 ? "bg-white border-slate-200 text-slate-900"
                 : "bg-[#1e1e22] border-white/12 text-slate-100"
@@ -340,7 +339,7 @@ export const Projects = () => {
               <img
                 src={selectedProject.previewImage || selectedProject.image}
                 alt={selectedProject.name}
-                className="w-full max-h-[340px] object-contain rounded-2xl mx-auto"
+                className="w-full max-h-[340px] object-contain rounded-lg mx-auto"
               />
             </div>
 
@@ -479,7 +478,7 @@ export const Projects = () => {
       <div className="mt-8 flex justify-center">
         <div
           data-no-constellation="true"
-          className={`inline-flex items-center gap-1.5 overflow-x-auto max-w-full scrollbar-hidden p-1.5 rounded-2xl border backdrop-blur-md relative z-30 ${
+          className={`inline-flex items-center gap-1.5 overflow-x-auto max-w-full scrollbar-hidden p-1.5 rounded-xl border backdrop-blur-md relative z-30 ${
             isLight
               ? "bg-white/80 border-slate-200/85 shadow-xs"
               : "bg-[#222226]/90 border-white/10"
@@ -492,7 +491,7 @@ export const Projects = () => {
                 key={cat.key}
                 type="button"
                 onClick={() => handleCategoryChange(cat.key)}
-                className={`relative px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold whitespace-nowrap transition-colors duration-200 cursor-pointer select-none ${
+                className={`relative px-3.5 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold whitespace-nowrap transition-colors duration-200 cursor-pointer select-none ${
                   isActive
                     ? "text-white dark:text-slate-950"
                     : isLight
@@ -504,7 +503,7 @@ export const Projects = () => {
                   <motion.span
                     layoutId="projects-active-pill"
                     transition={{ type: "spring", stiffness: 420, damping: 32 }}
-                    className="absolute inset-0 rounded-xl bg-[#0c5a84] dark:bg-sky-400 shadow-xs"
+                    className="absolute inset-0 rounded-lg bg-[#0c5a84] dark:bg-sky-400 shadow-xs"
                   />
                 )}
                 <span className="relative z-10 flex items-center gap-1.5">
@@ -527,7 +526,7 @@ export const Projects = () => {
         </div>
       </div>
 
-      {/* Paginated 3-Card Bento Grid (data-no-constellation suppresses mouse network overlay) */}
+      {/* Paginated 3-Card Grid (static cards, humanized geometry) */}
       <AnimatePresence mode="wait">
         <motion.div
           key={`${activeCategory}-page-${safePage}`}
@@ -545,24 +544,24 @@ export const Projects = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.24, delay: index * 0.05 }}
               onClick={() => setSelectedProject(project)}
-              className={`group/project rounded-3xl p-4 border flex flex-col cursor-pointer select-none transition-all duration-250 hover:-translate-y-1 backdrop-blur-md shadow-[var(--custom-shadow)] ${
+              className={`rounded-[14px] p-4 border flex flex-col cursor-pointer select-none backdrop-blur-md shadow-[var(--custom-shadow)] ${
                 isLight
-                  ? "bg-white/85 hover:bg-white border-slate-200/85 hover:border-[#0c5a84]/35"
-                  : "bg-[#222226]/92 hover:bg-[#27272c] border-white/10 hover:border-sky-400/35"
+                  ? "bg-white/88 border-slate-200/85"
+                  : "bg-[#222226]/92 border-white/10"
               }`}
             >
               {/* Image Preview Container */}
               <div
-                className={`relative aspect-[16/10] w-full overflow-hidden rounded-2xl border ${
+                className={`relative aspect-[16/10] w-full overflow-hidden rounded-[9px] border ${
                   isLight
                     ? "bg-slate-100 border-slate-200/70"
                     : "bg-[#16161a] border-white/[0.08]"
                 }`}
               >
                 <span
-                  className={`z-10 text-[11px] font-bold absolute top-2.5 left-2.5 rounded-full px-2.5 py-0.5 backdrop-blur-md border shadow-2xs ${
+                  className={`z-10 text-[11px] font-bold absolute top-2.5 left-2.5 rounded-md px-2.5 py-0.5 backdrop-blur-md border shadow-2xs ${
                     isLight
-                      ? "bg-white/90 text-[#0c5a84] border-slate-200/80"
+                      ? "bg-white/92 text-[#0c5a84] border-slate-200/80"
                       : "bg-slate-900/85 text-sky-300 border-white/15"
                   }`}
                 >
@@ -573,19 +572,14 @@ export const Projects = () => {
                   src={project.image}
                   alt={project.name}
                   loading="lazy"
-                  className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover/project:scale-[1.04]"
+                  className="w-full h-full object-cover object-top"
                 />
-
-                {/* Hover Open Button */}
-                <span className="absolute top-2.5 right-2.5 z-10 size-8 rounded-full bg-slate-950/65 text-white flex items-center justify-center opacity-0 group-hover/project:opacity-100 transition-opacity duration-200 backdrop-blur-xs">
-                  <ArrowUpRight className="size-4" />
-                </span>
               </div>
 
               {/* Card Body */}
               <div className="mt-4 flex-1 flex flex-col text-left">
                 <div className="flex items-start justify-between gap-2">
-                  <h2 className="font-bold text-lg leading-snug text-[var(--text-dark)] group-hover/project:text-[#0c5a84] dark:group-hover/project:text-sky-300 transition-colors">
+                  <h2 className="font-bold text-lg leading-snug text-[var(--text-dark)]">
                     {project.name}
                   </h2>
                   <div className="flex items-center gap-1 shrink-0">
@@ -600,10 +594,8 @@ export const Projects = () => {
                             ? `GitHub: ${project.githubLabel}`
                             : "GitHub Repository"
                         }
-                        className={`p-1.5 rounded-lg transition-colors ${
-                          isLight
-                            ? "text-slate-500 hover:text-[#0c5a84] hover:bg-slate-100"
-                            : "text-slate-400 hover:text-sky-300 hover:bg-white/10"
+                        className={`p-1.5 rounded-md ${
+                          isLight ? "text-slate-600" : "text-slate-300"
                         }`}
                       >
                         <FolderGit2 className="size-4" />
@@ -616,10 +608,8 @@ export const Projects = () => {
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
                         title="Live Demo"
-                        className={`p-1.5 rounded-lg transition-colors ${
-                          isLight
-                            ? "text-slate-500 hover:text-[#0c5a84] hover:bg-slate-100"
-                            : "text-slate-400 hover:text-sky-300 hover:bg-white/10"
+                        className={`p-1.5 rounded-md ${
+                          isLight ? "text-slate-600" : "text-slate-300"
                         }`}
                       >
                         <ExternalLink className="size-4" />
@@ -641,7 +631,7 @@ export const Projects = () => {
                   {project.tech.slice(0, 5).map((techItem) => (
                     <span
                       key={techItem.name}
-                      className={`inline-flex items-center gap-1.5 text-[11px] font-semibold px-2 py-1 rounded-lg border ${
+                      className={`inline-flex items-center gap-1.5 text-[11px] font-semibold px-2 py-1 rounded-md border ${
                         isLight
                           ? "bg-slate-50 text-slate-700 border-slate-200/80"
                           : "bg-white/[0.04] text-slate-200 border-white/[0.08]"
@@ -659,7 +649,7 @@ export const Projects = () => {
                   ))}
                   {project.tech.length > 5 && (
                     <span
-                      className={`text-[11px] font-semibold px-2 py-1 rounded-lg border ${
+                      className={`text-[11px] font-semibold px-2 py-1 rounded-md border ${
                         isLight
                           ? "bg-slate-50 text-slate-500 border-slate-200/80"
                           : "bg-white/[0.04] text-slate-400 border-white/[0.08]"
@@ -682,7 +672,7 @@ export const Projects = () => {
           className="mt-7 relative z-30 flex flex-col sm:flex-row items-center justify-center gap-3"
         >
           <div
-            className={`inline-flex items-center gap-1.5 p-1.5 rounded-2xl border backdrop-blur-md ${
+            className={`inline-flex items-center gap-1.5 p-1.5 rounded-xl border backdrop-blur-md ${
               isLight
                 ? "bg-white/85 border-slate-200/85 shadow-xs"
                 : "bg-[#222226]/92 border-white/10"
@@ -693,7 +683,7 @@ export const Projects = () => {
               onClick={() => goToPage(safePage - 1)}
               disabled={safePage === 1}
               aria-label={t("Previous", "Previous")}
-              className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-colors select-none ${
+              className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors select-none ${
                 safePage === 1
                   ? "opacity-40 cursor-not-allowed text-slate-400"
                   : isLight
@@ -716,7 +706,7 @@ export const Projects = () => {
                     onClick={() => goToPage(pageNum)}
                     aria-label={`Page ${pageNum}`}
                     aria-current={isPageActive ? "page" : undefined}
-                    className={`relative size-8 sm:size-9 rounded-xl text-xs sm:text-sm font-bold transition-colors cursor-pointer select-none flex items-center justify-center ${
+                    className={`relative size-8 sm:size-9 rounded-lg text-xs sm:text-sm font-bold transition-colors cursor-pointer select-none flex items-center justify-center ${
                       isPageActive
                         ? "text-white dark:text-slate-950"
                         : isLight
@@ -732,7 +722,7 @@ export const Projects = () => {
                           stiffness: 420,
                           damping: 32,
                         }}
-                        className="absolute inset-0 rounded-xl bg-[#0c5a84] dark:bg-sky-400 shadow-xs"
+                        className="absolute inset-0 rounded-lg bg-[#0c5a84] dark:bg-sky-400 shadow-xs"
                       />
                     )}
                     <span className="relative z-10">{pageNum}</span>
@@ -746,7 +736,7 @@ export const Projects = () => {
               onClick={() => goToPage(safePage + 1)}
               disabled={safePage === totalPages}
               aria-label={t("Next", "Next")}
-              className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-semibold transition-colors select-none ${
+              className={`inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-colors select-none ${
                 safePage === totalPages
                   ? "opacity-40 cursor-not-allowed text-slate-400"
                   : isLight
@@ -774,9 +764,9 @@ export const Projects = () => {
       {/* Additional Full-Stack Projects Strip */}
       <div
         data-no-constellation="true"
-        className={`mt-6 relative z-30 rounded-3xl border px-5 sm:px-6 py-4 backdrop-blur-md shadow-[var(--custom-shadow)] ${
+        className={`mt-6 relative z-30 rounded-xl border px-5 sm:px-6 py-4 backdrop-blur-md shadow-[var(--custom-shadow)] ${
           isLight
-            ? "bg-white/80 border-slate-200/85"
+            ? "bg-white/82 border-slate-200/85"
             : "bg-[#222226]/90 border-white/10"
         }`}
       >
@@ -794,10 +784,10 @@ export const Projects = () => {
                   href={item.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`inline-flex flex-wrap items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-xl border transition-colors ${
+                  className={`inline-flex flex-wrap items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md border ${
                     isLight
-                      ? "bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200/85 hover:border-[#0c5a84]/35"
-                      : "bg-white/[0.04] hover:bg-white/[0.09] text-slate-200 border-white/[0.08] hover:border-sky-400/35"
+                      ? "bg-slate-50 text-slate-700 border-slate-200/85"
+                      : "bg-white/[0.04] text-slate-200 border-white/[0.08]"
                   }`}
                 >
                   <FolderGit2 className="size-3.5 text-[#0c5a84] dark:text-sky-400 shrink-0" />
@@ -811,7 +801,7 @@ export const Projects = () => {
               ) : (
                 <span
                   key={item.name}
-                  className={`inline-flex flex-wrap items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-xl border ${
+                  className={`inline-flex flex-wrap items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md border ${
                     isLight
                       ? "bg-slate-50 text-slate-700 border-slate-200/85"
                       : "bg-white/[0.04] text-slate-200 border-white/[0.08]"

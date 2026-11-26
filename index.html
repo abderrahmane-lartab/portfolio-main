@@ -32,6 +32,13 @@
       content="AI & Full Stack Developer from Casablanca, Morocco building intelligent, scalable web and AI applications."
     />
     <meta property="og:type" content="website" />
+    <script>
+      try {
+        if (localStorage.getItem("vite-ui-theme") === "dark") {
+          document.documentElement.classList.add("dark");
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="app"></div>

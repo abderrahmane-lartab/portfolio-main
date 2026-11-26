@@ -1,8 +1,15 @@
+import https from "node:https";
 import tls from "node:tls";
 
 const MAX_NAME_LENGTH = 100;
 const MAX_EMAIL_LENGTH = 160;
 const MAX_MESSAGE_LENGTH = 4000;
+const MIN_HUMAN_ELAPSED_MS = 1200;
+const MAX_URLS_IN_MESSAGE = 4;
+
+// Official Google reCAPTCHA v2 test secret (used ONLY in local non-production dev when RECAPTCHA_SECRET_KEY is not set)
+const GOOGLE_LOCAL_TEST_SECRET_KEY =
+  "6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe";
 
 // Simple in-memory rate limit (max 5 contact submissions per 10 minutes per IP)
 const rateMap = new Map();
@@ -24,7 +31,9 @@ function checkRateLimit(clientKey) {
 }
 
 function sanitizeHeaderValue(value) {
-  return String(value || "").replace(/[\r\n]+/g, " ").trim();
+  return String(value || "")
+    .replace(/[\r\n]+/g, " ")
+    .trim();
 }
 
 function escapeHtml(str) {
@@ -45,9 +54,70 @@ function wrapBase64(b64) {
 }
 
 /**
+ * Verifies a Google reCAPTCHA v2 token against Google's /recaptcha/api/siteverify over IPv4 HTTPS.
+ */
+function verifyRecaptchaToken({ secretKey, token, remoteIp }) {
+  return new Promise((resolve, reject) => {
+    const params = new URLSearchParams({
+      secret: secretKey,
+      response: token,
+    });
+    if (remoteIp && remoteIp !== "local" && remoteIp !== "unknown") {
+      params.set("remoteip", remoteIp);
+    }
+    const postBody = params.toString();
+
+    const req = https.request(
+      {
+        hostname: "www.google.com",
+        port: 443,
+        path: "/recaptcha/api/siteverify",
+        method: "POST",
+        family: 4,
+        timeout: 10000,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Length": Buffer.byteLength(postBody),
+        },
+      },
+      (res) => {
+        let raw = "";
+        res.setEncoding("utf8");
+        res.on("data", (chunk) => {
+          raw += chunk;
+        });
+        res.on("end", () => {
+          try {
+            const parsed = JSON.parse(raw || "{}");
+            resolve(parsed);
+          } catch {
+            reject(new Error("Invalid response from Google reCAPTCHA API"));
+          }
+        });
+      }
+    );
+
+    req.on("timeout", () => {
+      req.destroy(new Error("reCAPTCHA verification timed out"));
+    });
+    req.on("error", (err) => reject(err));
+    req.write(postBody);
+    req.end();
+  });
+}
+
+/**
  * Dependency-free IPv4 TLS SMTP client for smtp.gmail.com:465 using a Gmail App Password.
  */
-function sendViaGmailSmtps({ gmailUser, gmailAppPassword, toEmail, replyTo, senderName, subject, htmlBody }) {
+function sendViaGmailSmtps({
+  gmailUser,
+  gmailAppPassword,
+  toEmail,
+  replyTo,
+  senderName,
+  subject,
+  htmlBody,
+}) {
   return new Promise((resolve, reject) => {
     const socket = tls.connect({
       host: "smtp.gmail.com",
@@ -67,13 +137,14 @@ function sendViaGmailSmtps({ gmailUser, gmailAppPassword, toEmail, replyTo, send
     };
 
     socket.setEncoding("utf8");
-    socket.on("timeout", () => fail(new Error("Gmail SMTP connection timed out")));
+    socket.on("timeout", () =>
+      fail(new Error("Gmail SMTP connection timed out"))
+    );
     socket.on("error", (err) => fail(err));
 
     const tryFlushLines = () => {
       if (!currentWaiter) return;
       const lines = buffer.split("\r\n");
-      // Wait until we have at least one complete CRLF-terminated final SMTP response line ("XYZ ...")
       let consumedChars = 0;
       const fullLines = [];
 
@@ -107,7 +178,10 @@ function sendViaGmailSmtps({ gmailUser, gmailAppPassword, toEmail, replyTo, send
     const sendCommand = async (cmd, expectedPrefix) => {
       socket.write(`${cmd}\r\n`);
       const resp = await expectResponse();
-      if (Math.floor(resp.code / 100) !== expectedPrefix && resp.code !== expectedPrefix) {
+      if (
+        Math.floor(resp.code / 100) !== expectedPrefix &&
+        resp.code !== expectedPrefix
+      ) {
         throw new Error(`SMTP error (${resp.code}): ${resp.text}`);
       }
       return resp;
@@ -122,9 +196,15 @@ function sendViaGmailSmtps({ gmailUser, gmailAppPassword, toEmail, replyTo, send
 
         await sendCommand("EHLO portfolio.local", 250);
         await sendCommand("AUTH LOGIN", 334);
-        await sendCommand(Buffer.from(gmailUser, "utf8").toString("base64"), 334);
         await sendCommand(
-          Buffer.from(gmailAppPassword.replace(/\s+/g, ""), "utf8").toString("base64"),
+          Buffer.from(gmailUser, "utf8").toString("base64"),
+          334
+        );
+        await sendCommand(
+          Buffer.from(
+            gmailAppPassword.replace(/\s+/g, ""),
+            "utf8"
+          ).toString("base64"),
           235
         );
 
@@ -132,9 +212,13 @@ function sendViaGmailSmtps({ gmailUser, gmailAppPassword, toEmail, replyTo, send
         await sendCommand(`RCPT TO:<${toEmail}>`, 250);
         await sendCommand("DATA", 354);
 
-        const encodedFromName = encodeMimeHeaderUtf8(`${senderName} (via Portfolio)`);
+        const encodedFromName = encodeMimeHeaderUtf8(
+          `${senderName} (via Portfolio)`
+        );
         const encodedSubject = encodeMimeHeaderUtf8(subject);
-        const encodedHtml = wrapBase64(Buffer.from(htmlBody, "utf8").toString("base64"));
+        const encodedHtml = wrapBase64(
+          Buffer.from(htmlBody, "utf8").toString("base64")
+        );
 
         const mimeMessage = [
           `From: ${encodedFromName} <${gmailUser}>`,
@@ -162,19 +246,52 @@ function sendViaGmailSmtps({ gmailUser, gmailAppPassword, toEmail, replyTo, send
 }
 
 /**
- * Handles POST /api/contact securely on the backend and delivers messages to Gmail.
+ * Handles POST /api/contact securely on the backend, verifying anti-spam & reCAPTCHA before Gmail delivery.
  */
-export async function handleContactRequest(payload, env = process.env, clientIp = "local") {
+export async function handleContactRequest(
+  payload,
+  env = process.env,
+  clientIp = "local"
+) {
   if (!checkRateLimit(clientIp)) {
     return {
       status: 429,
-      body: { error: "Too many messages sent recently. Please try again in a few minutes." },
+      body: {
+        error:
+          "Too many messages sent recently. Please try again in a few minutes.",
+      },
+    };
+  }
+
+  // 1. Honeypot check (bots auto-fill hidden fields)
+  if (typeof payload?.website === "string" && payload.website.trim() !== "") {
+    return {
+      status: 400,
+      body: { error: "Spam submission rejected." },
+    };
+  }
+
+  // 2. Minimum human fill-time check
+  if (
+    typeof payload?.elapsedMs === "number" &&
+    payload.elapsedMs >= 0 &&
+    payload.elapsedMs < MIN_HUMAN_ELAPSED_MS
+  ) {
+    return {
+      status: 400,
+      body: { error: "Submission too fast. Please try again." },
     };
   }
 
   const rawName = sanitizeHeaderValue(payload?.name).slice(0, MAX_NAME_LENGTH);
-  const rawEmail = sanitizeHeaderValue(payload?.email).slice(0, MAX_EMAIL_LENGTH);
-  const rawMessage = typeof payload?.message === "string" ? payload.message.trim().slice(0, MAX_MESSAGE_LENGTH) : "";
+  const rawEmail = sanitizeHeaderValue(payload?.email).slice(
+    0,
+    MAX_EMAIL_LENGTH
+  );
+  const rawMessage =
+    typeof payload?.message === "string"
+      ? payload.message.trim().slice(0, MAX_MESSAGE_LENGTH)
+      : "";
 
   if (!rawName || rawName.length < 2) {
     return { status: 400, body: { error: "Please enter your name." } };
@@ -182,16 +299,91 @@ export async function handleContactRequest(payload, env = process.env, clientIp 
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   if (!emailRegex.test(rawEmail)) {
-    return { status: 400, body: { error: "Please enter a valid email address." } };
+    return {
+      status: 400,
+      body: { error: "Please enter a valid email address." },
+    };
   }
 
   if (!rawMessage || rawMessage.length < 3) {
     return { status: 400, body: { error: "Please enter a message." } };
   }
 
-  const gmailUser = sanitizeHeaderValue(env?.GMAIL_USER || "lartab.abderrahmane@gmail.com");
+  // 3. Link-flood spam filter
+  const urlMatches = rawMessage.match(/https?:\/\/|www\./gi) || [];
+  if (urlMatches.length > MAX_URLS_IN_MESSAGE) {
+    return {
+      status: 400,
+      body: { error: "Too many links in message. Spam rejected." },
+    };
+  }
+
+  // 4. Google reCAPTCHA v2 verification
+  const recaptchaToken =
+    typeof payload?.recaptchaToken === "string"
+      ? payload.recaptchaToken.trim()
+      : "";
+  if (!recaptchaToken) {
+    return {
+      status: 400,
+      body: { error: "Please complete the reCAPTCHA verification." },
+    };
+  }
+
+  const rawSecret = (env?.RECAPTCHA_SECRET_KEY || "").trim();
+  const hasRealSecret =
+    Boolean(rawSecret) && rawSecret !== "your_recaptcha_v2_secret_key_here";
+  const isProduction =
+    Boolean(env?.VERCEL) || env?.NODE_ENV === "production";
+
+  const activeSecretKey = hasRealSecret
+    ? rawSecret
+    : !isProduction
+    ? GOOGLE_LOCAL_TEST_SECRET_KEY
+    : "";
+
+  if (!activeSecretKey) {
+    return {
+      status: 503,
+      body: {
+        error:
+          "reCAPTCHA server key is not configured yet. Please add RECAPTCHA_SECRET_KEY in environment variables.",
+      },
+    };
+  }
+
+  try {
+    const verification = await verifyRecaptchaToken({
+      secretKey: activeSecretKey,
+      token: recaptchaToken,
+      remoteIp: clientIp,
+    });
+
+    if (!verification?.success) {
+      return {
+        status: 400,
+        body: {
+          error: "reCAPTCHA verification failed or expired. Please try again.",
+        },
+      };
+    }
+  } catch (err) {
+    console.error("[reCAPTCHA verify error]", err?.message || err);
+    return {
+      status: 502,
+      body: {
+        error: "Could not verify reCAPTCHA right now. Please try again.",
+      },
+    };
+  }
+
+  const gmailUser = sanitizeHeaderValue(
+    env?.GMAIL_USER || "lartab.abderrahmane@gmail.com"
+  );
   const gmailAppPassword = (env?.GMAIL_APP_PASSWORD || "").trim();
-  const receiverEmail = sanitizeHeaderValue(env?.CONTACT_RECEIVER_EMAIL || gmailUser);
+  const receiverEmail = sanitizeHeaderValue(
+    env?.CONTACT_RECEIVER_EMAIL || gmailUser
+  );
 
   if (
     !gmailAppPassword ||
@@ -219,7 +411,7 @@ export async function handleContactRequest(payload, env = process.env, clientIp 
         <hr style="border: none; border-top: 1px solid #e2e8f0; margin: 14px 0;" />
         <div style="color: #0f172a; font-size: 15px; line-height: 1.6;">${safeMessageHtml}</div>
       </div>
-      <p style="margin: 14px 0 0; font-size: 12px; color: #64748b;">Tip: Click <strong>Reply</strong> in Gmail to respond directly to ${safeNameHtml} (${safeEmailHtml}).</p>
+      <p style="margin: 14px 0 0; font-size: 12px; color: #64748b;">Verified via Google reCAPTCHA · Tip: Click <strong>Reply</strong> in Gmail to respond directly to ${safeNameHtml} (${safeEmailHtml}).</p>
     </div>
   `;
 

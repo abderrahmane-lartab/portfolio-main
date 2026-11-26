@@ -68,9 +68,9 @@ export const About = () => {
       className="w-[82%] max-xl:w-[88%] max-sm:w-[92%] mx-auto my-12 max-[900px]:my-16"
     >
       <div
-        className={`relative overflow-hidden rounded-4xl border px-7 sm:px-10 py-9 sm:py-11 shadow-[var(--custom-shadow)] backdrop-blur-md ${
+        className={`relative overflow-hidden rounded-2xl border px-7 sm:px-10 py-9 sm:py-11 shadow-[var(--custom-shadow)] backdrop-blur-md ${
           isLight
-            ? "bg-white/80 border-slate-200/85"
+            ? "bg-white/85 border-slate-200/85"
             : "bg-[#222226]/90 border-white/10"
         }`}
       >
@@ -189,7 +189,7 @@ export const About = () => {
                 return (
                   <div
                     key={idx}
-                    className={`flex items-start gap-2.5 rounded-2xl px-3.5 py-3 border ${
+                    className={`flex items-start gap-2.5 rounded-r-lg rounded-l-[3px] border border-l-[3px] border-l-[#0c5a84] dark:border-l-sky-400 px-3.5 py-3 ${
                       isLight
                         ? "bg-slate-50/90 border-slate-200/80"
                         : "bg-white/[0.04] border-white/[0.08]"
@@ -232,17 +232,17 @@ export const About = () => {
                   delay={0.08 * (index + 1)}
                 >
                   <div
-                    className={`group flex items-start gap-3.5 rounded-2xl p-4 border transition-all duration-200 ${
+                    className={`flex items-start gap-3.5 rounded-xl p-4 border ${
                       isLight
-                        ? "bg-slate-50/85 hover:bg-white border-slate-200/85 hover:border-[#0c5a84]/35 hover:shadow-sm"
-                        : "bg-white/[0.04] hover:bg-white/[0.07] border-white/[0.08] hover:border-sky-400/30"
+                        ? "bg-slate-50/85 border-slate-200/85"
+                        : "bg-white/[0.04] border-white/[0.08]"
                     }`}
                   >
                     <span
-                      className={`size-10 shrink-0 rounded-xl flex items-center justify-center transition-colors ${
+                      className={`size-10 shrink-0 rounded-lg flex items-center justify-center ${
                         isLight
-                          ? "bg-[#0c5a84]/10 text-[#0c5a84] group-hover:bg-[#0c5a84] group-hover:text-white"
-                          : "bg-sky-400/15 text-sky-300 group-hover:bg-sky-400 group-hover:text-slate-950"
+                          ? "bg-[#0c5a84]/10 text-[#0c5a84]"
+                          : "bg-sky-400/15 text-sky-300"
                       }`}
                     >
                       <IconComp className="size-5" />

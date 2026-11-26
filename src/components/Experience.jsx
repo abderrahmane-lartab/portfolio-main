@@ -56,13 +56,92 @@ export const Experience = () => {
     }
   };
 
+  const getEducationBadges = (item) => {
+    const inst = `${item.institution || ""} ${item.title || ""}`.toLowerCase();
+
+    // Partnership: YouCode × UM6P
+    if (inst.includes("youcode")) {
+      return [
+        {
+          src: "/photos/schools/youcode.svg",
+          alt: "YouCode",
+          wrapperClass:
+            "bg-[#25282c] border border-white/10 px-2.5 py-1 rounded-[7px] shadow-2xs",
+          imgClass: "h-6 w-auto object-contain",
+        },
+        {
+          src: "/photos/schools/um6p.svg",
+          alt: "UM6P – Mohammed VI Polytechnic University",
+          wrapperClass:
+            "bg-white border border-slate-200/90 px-2 py-1 rounded-[7px] shadow-2xs",
+          imgClass: "h-6 w-auto object-contain",
+        },
+      ];
+    }
+
+    // OFPPT – ISAG Lalla Aicha
+    if (inst.includes("ofppt") || inst.includes("isag")) {
+      return [
+        {
+          src: "/photos/schools/ofppt.png",
+          alt: "OFPPT – ISAG Lalla Aicha",
+          wrapperClass:
+            "bg-white border border-slate-200/90 px-2.5 py-1 rounded-[8px] shadow-2xs",
+          imgClass: "h-9 w-auto object-contain",
+        },
+      ];
+    }
+
+    // High School Baccalaureate (Moroccan Ministry of National Education)
+    return [
+      {
+        src: "/photos/schools/men-maroc.svg",
+        alt: item.institution || "Baccalauréat",
+        wrapperClass:
+          "bg-white border border-slate-200/90 p-1 rounded-[9px] shadow-2xs",
+        imgClass: "size-8 object-contain",
+      },
+    ];
+  };
+
+  const renderEducationLogoRow = (item) => {
+    if (activeTab !== "education") return null;
+    const badges = getEducationBadges(item);
+    if (!badges.length) return null;
+
+    return (
+      <div className="flex flex-wrap items-center gap-2 mb-2">
+        {badges.map((badge, idx) => (
+          <React.Fragment key={badge.alt}>
+            {idx > 0 && (
+              <span
+                aria-hidden="true"
+                className={`text-xs font-bold select-none ${theme === "light" ? "text-slate-400" : "text-slate-500"
+                  }`}
+              >
+                ×
+              </span>
+            )}
+            <span className={`inline-flex items-center justify-center ${badge.wrapperClass}`}>
+              <img
+                src={badge.src}
+                alt={badge.alt}
+                loading="lazy"
+                className={badge.imgClass}
+              />
+            </span>
+          </React.Fragment>
+        ))}
+      </div>
+    );
+  };
+
   const TimelineItem = ({ item }) => (
     <div
-      className={`flex flex-col sm:flex-row w-full mb-8 relative ${
-        item.position === "right"
-          ? "sm:justify-end max-md:justify-start!"
-          : "max-md:justify-start!"
-      }`}
+      className={`flex flex-col sm:flex-row w-full mb-8 relative ${item.position === "right"
+        ? "sm:justify-end max-md:justify-start!"
+        : "max-md:justify-start!"
+        }`}
     >
       {/* Center Icon */}
       <div className="absolute sm:left-1/2 left-0 sm:-translate-x-1/2 max-md:left-0! max-sm:-left-[15px]! max-md:justify-start! top-0 sm:top-auto z-10 flex justify-center items-center w-full sm:w-auto mb-2 sm:mb-0">
@@ -77,13 +156,11 @@ export const Experience = () => {
 
       {/* Card */}
       <div
-        className={`w-full sm:w-1/2 max-md:w-full! max-sm:hidden ${
-          item.position === "right"
-            ? "sm:pl-8 sm:pr-0 max-sm:pl-8"
-            : "sm:pr-8 sm:pl-0 max-md:pl-8! max-md:pr-0!"
-        } mt-6 sm:mt-0 text-start max-sm:mt-0 sm:text-${
-          item.position === "right" ? "left" : "right"
-        }`}
+        className={`w-full sm:w-1/2 max-md:w-full! max-sm:hidden ${item.position === "right"
+          ? "sm:pl-8 sm:pr-0 max-sm:pl-8"
+          : "sm:pr-8 sm:pl-0 max-md:pl-8! max-md:pr-0!"
+          } mt-6 sm:mt-0 text-start max-sm:mt-0 sm:text-${item.position === "right" ? "left" : "right"
+          }`}
       >
         <FadeContent
           blur={true}
@@ -93,45 +170,42 @@ export const Experience = () => {
           initialOpacity={0}
         >
           <div
-            className={`p-4 rounded-lg shadow-sm flex flex-col gap-1 border-l-[5px] border-l-[#0c5a84] dark:border-l-sky-400 ${
-              theme === "light" ? "bg-gray-100" : "bg-[#2c2c30]"
-            }`}
-          >
-            <h3
-              className={`font-semibold ${
-                theme === "light" ? "text-gray-800" : "text-white"
+            className={`p-4 sm:p-5 rounded-r-[14px] rounded-l-[3px] border border-l-[4px] border-l-[#0c5a84] dark:border-l-sky-400 shadow-xs flex flex-col gap-1 ${theme === "light"
+              ? "bg-white/88 border-slate-200/85"
+              : "bg-[#222226]/92 border-white/10"
               }`}
+          >
+            {renderEducationLogoRow(item)}
+            <h3
+              className={`font-bold ${theme === "light" ? "text-slate-900" : "text-slate-100"
+                }`}
             >
               {item.title}
             </h3>
             <p
-              className={`text-sm ${
-                theme === "light" ? "text-gray-600" : "text-white"
-              }`}
+              className={`text-sm font-semibold ${theme === "light" ? "text-[#0c5a84]" : "text-sky-300"
+                }`}
             >
               {item.institution}
             </p>
             {item.location && (
               <p
-                className={`text-sm ${
-                  theme === "light" ? "text-gray-600" : "text-white"
-                }`}
+                className={`text-xs sm:text-sm ${theme === "light" ? "text-slate-500" : "text-slate-400"
+                  }`}
               >
                 {item.location}
               </p>
             )}
             <p
-              className={`text-sm ${
-                theme === "light" ? "text-gray-600" : "text-white"
-              }`}
+              className={`text-xs font-medium ${theme === "light" ? "text-slate-500" : "text-slate-400"
+                }`}
             >
               {item.period}
             </p>
             {item.description && (
               <div
-                className={`text-sm mt-1 text-wrap break-words text-justify leading-[1.35] ${
-                  theme === "light" ? "text-gray-600" : "text-white"
-                }`}
+                className={`text-sm mt-1.5 text-wrap break-words text-left leading-relaxed ${theme === "light" ? "text-slate-600" : "text-slate-300"
+                  }`}
               >
                 {item.description.split("\\n").map((line, index) => (
                   <p key={index} className={index > 0 ? "mt-1" : ""}>
@@ -144,54 +218,49 @@ export const Experience = () => {
         </FadeContent>
       </div>
       <div
-        className={`w-full sm:w-1/2 max-md:w-full! min-sm:hidden ${
-          item.position === "right"
-            ? "sm:pl-8 sm:pr-0 max-sm:pl-8"
-            : "sm:pr-8 sm:pl-0 max-md:pl-8! max-md:pr-0!"
-        } mt-6 sm:mt-0 text-start max-sm:mt-0 sm:text-${
-          item.position === "right" ? "left" : "right"
-        }`}
+        className={`w-full sm:w-1/2 max-md:w-full! min-sm:hidden ${item.position === "right"
+          ? "sm:pl-8 sm:pr-0 max-sm:pl-8"
+          : "sm:pr-8 sm:pl-0 max-md:pl-8! max-md:pr-0!"
+          } mt-6 sm:mt-0 text-start max-sm:mt-0 sm:text-${item.position === "right" ? "left" : "right"
+          }`}
       >
         <div
-          className={`p-4 rounded-lg shadow-sm flex flex-col gap-1 border-l-[5px] border-l-[#0c5a84] dark:border-l-sky-400 ${
-            theme === "light" ? "bg-gray-100" : "bg-[#2c2c30]"
-          }`}
-        >
-          <h3
-            className={`font-semibold ${
-              theme === "light" ? "text-gray-800" : "text-white"
+          className={`p-4 rounded-r-[14px] rounded-l-[3px] border border-l-[4px] border-l-[#0c5a84] dark:border-l-sky-400 shadow-xs flex flex-col gap-1 ${theme === "light"
+            ? "bg-white/88 border-slate-200/85"
+            : "bg-[#222226]/92 border-white/10"
             }`}
+        >
+          {renderEducationLogoRow(item)}
+          <h3
+            className={`font-bold ${theme === "light" ? "text-slate-900" : "text-slate-100"
+              }`}
           >
             {item.title}
           </h3>
           <p
-            className={`text-sm ${
-              theme === "light" ? "text-gray-600" : "text-white"
-            }`}
+            className={`text-sm font-semibold ${theme === "light" ? "text-[#0c5a84]" : "text-sky-300"
+              }`}
           >
             {item.institution}
           </p>
           {item.location && (
             <p
-              className={`text-sm ${
-                theme === "light" ? "text-gray-600" : "text-white"
-              }`}
+              className={`text-xs sm:text-sm ${theme === "light" ? "text-slate-500" : "text-slate-400"
+                }`}
             >
               {item.location}
             </p>
           )}
           <p
-            className={`text-sm ${
-              theme === "light" ? "text-gray-600" : "text-white"
-            }`}
+            className={`text-xs font-medium ${theme === "light" ? "text-slate-500" : "text-slate-400"
+              }`}
           >
             {item.period}
           </p>
           {item.description && (
             <div
-              className={`text-sm mt-1 text-wrap break-words text-justify leading-[1.35] ${
-                theme === "light" ? "text-gray-600" : "text-white"
-              }`}
+              className={`text-sm mt-1.5 text-wrap break-words text-left leading-relaxed ${theme === "light" ? "text-slate-600" : "text-slate-300"
+                }`}
             >
               {item.description.split("\\n").map((line, index) => (
                 <p key={index} className={index > 0 ? "mt-1" : ""}>
@@ -235,11 +304,10 @@ export const Experience = () => {
                 key={key}
                 ref={(el) => (tabsRef.current[index] = el)}
                 onClick={() => setActiveTab(key)}
-                className={`flex items-center gap-3 pb-2 transition-all duration-300 cursor-pointer ${
-                  isActive
-                    ? "text-[#0c5a84] dark:text-sky-400 font-semibold"
-                    : "text-[var(--icons-color)] hover:text-[var(--text-dark)]"
-                }`}
+                className={`flex items-center gap-3 pb-2 transition-all duration-300 cursor-pointer ${isActive
+                  ? "text-[#0c5a84] dark:text-sky-400 font-semibold"
+                  : "text-[var(--icons-color)] hover:text-[var(--text-dark)]"
+                  }`}
               >
                 {key === "education" ? (
                   <GraduationCap />

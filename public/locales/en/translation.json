@@ -88,7 +88,7 @@
       {
         "title": "AI Developer Program",
         "institution": "YouCode",
-        "location": "Morocco",
+        "location": "Safi, Morocco",
         "period": "2026 – 2027 (Currently studying)",
         "description": "Hands-on training focused on data preparation, machine learning, deep learning, intelligent APIs, external AI services, and MLOps."
       },
@@ -241,5 +241,8 @@
   "All": "All",
   "Previous": "Prev",
   "Next": "Next",
-  "digitech_description": "A full-stack electronics e-commerce platform featuring product catalog browsing, user authentication, shopping cart, and order management — powered by React.js and a Laravel REST API."
+  "digitech_description": "A full-stack electronics e-commerce platform featuring product catalog browsing, user authentication, shopping cart, and order management — powered by React.js and a Laravel REST API.",
+  "Copy": "Copy",
+  "Copied!": "Copied!",
+  "contact_cta_subtitle": "Internship, full-time role, or an AI & Full Stack idea you want to ship — my inbox is open."
 }

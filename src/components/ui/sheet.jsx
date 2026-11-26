@@ -34,6 +34,15 @@ function SheetOverlay({ className, ...props }) {
   );
 }
 
+function isRecaptchaElement(target) {
+  if (!(target instanceof Element)) return false;
+  return Boolean(
+    target.closest(
+      'iframe[src*="recaptcha"], iframe[title*="recaptcha"], [style*="2000000000"], .g-recaptcha-bubble-arrow'
+    )
+  );
+}
+
 function SheetContent({
   className,
   children,
@@ -41,6 +50,8 @@ function SheetContent({
   title = "Sheet",
   description,
   closeClassName,
+  onInteractOutside,
+  onPointerDownOutside,
   ...props
 }) {
   return (
@@ -48,6 +59,20 @@ function SheetContent({
       <SheetOverlay />
       <SheetPrimitive.Content
         data-slot="sheet-content"
+        onInteractOutside={(e) => {
+          if (isRecaptchaElement(e.target)) {
+            e.preventDefault();
+            return;
+          }
+          onInteractOutside?.(e);
+        }}
+        onPointerDownOutside={(e) => {
+          if (isRecaptchaElement(e.target)) {
+            e.preventDefault();
+            return;
+          }
+          onPointerDownOutside?.(e);
+        }}
         className={cn(
           "bg-[var(--bg-primary)] data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-50 flex flex-col gap-4 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500 overflow-y-auto max-h-[100vh] w-full h-[100vh]",
           side === "right" &&

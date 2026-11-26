@@ -1,4 +1,3 @@
-import { Instagram } from "lucide-react";
 import React from "react";
 import { Link } from "react-scroll";
 import { useTheme } from "./theme-provider";
@@ -133,17 +132,6 @@ export const Footer = () => {
                 ></path>{" "}
               </g>
             </svg>
-          </a>
-        </FadeContent>
-        <FadeContent
-          blur={true}
-          duration={1100}
-          easing="ease-out"
-          delay={600}
-          initialOpacity={0}
-        >
-          <a href="https://www.instagram.com/abderrahmane_lartab" target="_blank">
-            <Instagram className="stroke-[var(--icons-color)]" />
           </a>
         </FadeContent>
       </div>

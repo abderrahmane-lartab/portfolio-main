@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156 44" fill="none">
+  <!-- Top-left corner bracket -->
+  <path d="M12 14V8H19" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="square"/>
+  <!-- Bottom-right corner bracket -->
+  <path d="M144 30V36H137" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="square"/>
+  <!-- "You" in crisp white + "Code" in YouCode signature blue -->
+  <text x="21" y="29" font-family="Nunito, Inter, system-ui, -apple-system, sans-serif" font-weight="800" font-size="22" letter-spacing="-0.4">
+    <tspan fill="#FFFFFF">You</tspan><tspan fill="#2581F4">Code</tspan>
+  </text>
+</svg>
