@@ -331,7 +331,10 @@ body {
   animation: pulseSlow 6s ease-in-out infinite;
 }
 
-/* Keep Google reCAPTCHA challenge popup interactive when Contact is inside a Radix Sheet */
-body > div[style*="z-index: 2000000000"] {
+/* Keep Google reCAPTCHA checkbox & mobile image-challenge iframe fully clickable above Sheet */
+body > div[style*="2000000000"],
+iframe[src*="recaptcha"],
+iframe[title*="recaptcha"] {
   pointer-events: auto !important;
+  touch-action: auto !important;
 }

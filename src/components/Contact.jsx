@@ -349,11 +349,11 @@ export const Contact = () => {
           {/* Google reCAPTCHA v2 Protection */}
           <div className="flex flex-col items-start gap-1 pt-0.5">
             {activeSiteKey ? (
-              <div className="max-w-full overflow-x-auto scrollbar-hidden">
+              <div className="max-w-full">
                 <div
                   key={isLight ? "recaptcha-light" : "recaptcha-dark"}
                   ref={recaptchaContainerRef}
-                  className="min-h-[78px] max-xs:scale-[0.88] max-xs:origin-left"
+                  className="min-h-[78px]"
                 />
               </div>
             ) : (

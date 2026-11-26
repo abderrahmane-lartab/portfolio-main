@@ -1,12 +1,31 @@
 import * as React from "react";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
-import { X, XIcon } from "lucide-react";
+import { X } from "lucide-react";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
 import { cn } from "@/lib/utils";
 
-function Sheet({ ...props }) {
-  return <SheetPrimitive.Root data-slot="sheet" {...props} />;
+/**
+ * Locks background page scroll while SheetContent is mounted WITHOUT
+ * setting `body { pointer-events: none }` or hijacking mobile `touchstart`
+ * events (which otherwise block cross-origin iframes like Google reCAPTCHA).
+ */
+function SheetScrollLock() {
+  React.useEffect(() => {
+    const prevBodyOverflow = document.body.style.overflow;
+    const prevHtmlOverflow = document.documentElement.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prevBodyOverflow;
+      document.documentElement.style.overflow = prevHtmlOverflow;
+    };
+  }, []);
+  return null;
+}
+
+function Sheet({ modal = false, ...props }) {
+  return <SheetPrimitive.Root data-slot="sheet" modal={modal} {...props} />;
 }
 
 function SheetTrigger({ ...props }) {
@@ -23,23 +42,17 @@ function SheetPortal({ ...props }) {
 
 function SheetOverlay({ className, ...props }) {
   return (
-    <SheetPrimitive.Overlay
-      data-slot="sheet-overlay"
-      className={cn(
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50",
-        className
-      )}
-      {...props}
-    />
-  );
-}
-
-function isRecaptchaElement(target) {
-  if (!(target instanceof Element)) return false;
-  return Boolean(
-    target.closest(
-      'iframe[src*="recaptcha"], iframe[title*="recaptcha"], [style*="2000000000"], .g-recaptcha-bubble-arrow'
-    )
+    <SheetPrimitive.Close asChild>
+      <div
+        data-slot="sheet-overlay"
+        aria-hidden="true"
+        className={cn(
+          "animate-in fade-in-0 duration-200 fixed inset-0 z-50 bg-black/55 backdrop-blur-[1px]",
+          className
+        )}
+        {...props}
+      />
+    </SheetPrimitive.Close>
   );
 }
 
@@ -51,30 +64,46 @@ function SheetContent({
   description,
   closeClassName,
   onInteractOutside,
+  onFocusOutside,
   onPointerDownOutside,
   ...props
 }) {
   return (
     <SheetPortal>
+      <SheetScrollLock />
       <SheetOverlay />
       <SheetPrimitive.Content
         data-slot="sheet-content"
+        onFocusOutside={(e) => {
+          // Prevent focus moving into cross-origin iframes (e.g. Google reCAPTCHA challenge) from closing Sheet
+          e.preventDefault();
+          onFocusOutside?.(e);
+        }}
         onInteractOutside={(e) => {
-          if (isRecaptchaElement(e.target)) {
+          // Backdrop clicks already close via <SheetOverlay />; prevent external popups (reCAPTCHA) from closing Sheet
+          const target = e.target;
+          if (
+            !(target instanceof Element) ||
+            !target.closest('[data-slot="sheet-overlay"]')
+          ) {
             e.preventDefault();
             return;
           }
           onInteractOutside?.(e);
         }}
         onPointerDownOutside={(e) => {
-          if (isRecaptchaElement(e.target)) {
+          const target = e.target;
+          if (
+            !(target instanceof Element) ||
+            !target.closest('[data-slot="sheet-overlay"]')
+          ) {
             e.preventDefault();
             return;
           }
           onPointerDownOutside?.(e);
         }}
         className={cn(
-          "bg-[var(--bg-primary)] data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-50 flex flex-col gap-4 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500 overflow-y-auto max-h-[100vh] w-full h-[100vh]",
+          "bg-[var(--bg-primary)] data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-[60] flex flex-col gap-4 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500 overflow-y-auto max-h-[100vh] w-full h-[100vh]",
           side === "right" &&
             "data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm",
           side === "left" &&
