@@ -29,7 +29,7 @@ export const abderrahmaneProfile = {
     email: "lartab.abderrahmane@gmail.com",
     linkedin: "https://linkedin.com/in/alartab",
     github: "https://github.com/abderrahmane-lartab",
-    portfolio: "https://abderrahmane-portfolio-dev.vercel.app/",
+    portfolio: "https://lartab.vercel.app/",
   },
 
   languages: ["Arabic", "French", "English"],

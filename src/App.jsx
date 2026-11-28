@@ -1,4 +1,5 @@
 import React, { Suspense, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
@@ -14,6 +15,13 @@ import { AIAmbientBackground } from "./components/AIAmbientBackground";
 import { Preloader } from "./components/Preloader";
 
 export const App = () => {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    const lang = (i18n.language || "en").split("-")[0];
+    document.documentElement.lang = lang;
+  }, [i18n.language]);
+
   useEffect(() => {
     const clickSound = new Audio("/sounds/click.mp3");
     const handleClick = (e) => {
