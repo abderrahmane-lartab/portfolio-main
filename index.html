@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/photos/MM_white_text.png" />
@@ -34,8 +34,16 @@
     <meta property="og:type" content="website" />
     <script>
       try {
-        if (localStorage.getItem("vite-ui-theme") === "dark") {
-          document.documentElement.classList.add("dark");
+        localStorage.removeItem("vite-ui-theme");
+        const savedTheme = localStorage.getItem("abderrahmane-portfolio-theme");
+        const root = document.documentElement;
+        root.classList.remove("light", "dark");
+        if (savedTheme === "dark") {
+          root.classList.add("dark");
+          root.style.colorScheme = "dark";
+        } else {
+          root.classList.add("light");
+          root.style.colorScheme = "light";
         }
       } catch (e) {}
     </script>

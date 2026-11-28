@@ -9,25 +9,42 @@ const ThemeProviderContext = createContext(initialState);
 
 export function ThemeProvider({
   children,
-  storageKey = "vite-ui-theme",
+  defaultTheme = "light",
+  storageKey = "abderrahmane-portfolio-theme",
   ...props
 }) {
-  const [theme, setTheme] = useState(
-    () => localStorage.getItem(storageKey) || "light"
-  );
+  const [theme, setTheme] = useState(() => {
+    try {
+      localStorage.removeItem("vite-ui-theme");
+      const stored = localStorage.getItem(storageKey);
+      if (stored === "light" || stored === "dark") {
+        return stored;
+      }
+    } catch {
+      // Ignore storage access errors
+    }
+    return defaultTheme;
+  });
 
   useEffect(() => {
     const root = window.document.documentElement;
+    const resolved = theme === "dark" ? "dark" : "light";
 
     root.classList.remove("light", "dark");
-    root.classList.add(theme);
+    root.classList.add(resolved);
+    root.style.colorScheme = resolved;
   }, [theme]);
 
   const value = {
     theme,
-    setTheme: (theme) => {
-      localStorage.setItem(storageKey, theme);
-      setTheme(theme);
+    setTheme: (nextTheme) => {
+      const resolved = nextTheme === "dark" ? "dark" : "light";
+      try {
+        localStorage.setItem(storageKey, resolved);
+      } catch {
+        // Ignore storage access errors
+      }
+      setTheme(resolved);
     },
   };
 

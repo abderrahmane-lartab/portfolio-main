@@ -31,7 +31,10 @@ export const App = () => {
   }, []);
 
   return (
-    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+    <ThemeProvider
+      defaultTheme="light"
+      storageKey="abderrahmane-portfolio-theme"
+    >
       <Preloader />
       <Suspense fallback={null}>
         <div className="relative min-h-screen overflow-x-clip">
